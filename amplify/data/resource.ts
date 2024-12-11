@@ -1,21 +1,46 @@
 import { type ClientSchema, a, defineData } from "@aws-amplify/backend";
+import { ageEnum, careEnum, careerAmbition, commitmentsEnum, contractEnum, extentEnum, financeEnum, learningEnum, maritalEnum, recencyEnum, roleEnum, searchEnum, searchResultEnum, singleTypeEnum, supportEnum, workEnum } from "./constants";
+import { getField } from "./weights";
 
-/*== STEP 1 ===============================================================
-The section below creates a Todo database table with a "content" field. Try
-adding a new "isDone" field as a boolean. The authorization rule below
-specifies that any user authenticated via an API key can "create", "read",
-"update", and "delete" any "Todo" records.
-=========================================================================*/
-const schema = a.schema({
-  Todo: a
-    .model({
-      content: a.string(),
+const schema = a.schema({  
+  Question : a.model({
+      candidateName : a.string().required(),
+      candidateId : a.string().required(),
+      candidateLocation : a.string().required(),
+      interviewer : a.string().required(),
+      interviewDate : a.date().required(),
+      jobLocation: a.string().required(),
+      roles : a.enum( Object.keys(roleEnum) ),
+      interviewerJobLocation: a.string(),
+      typeOfContract: a.enum( Object.keys(contractEnum) ),
+      driveToWork : a.enum( Object.keys(workEnum) ),
+      careerAmbition: a.enum( Object.keys(careerAmbition)),
+      financialDrive: a.enum( Object.keys(financeEnum) ),
+      learningReadiness: a.enum( Object.keys(learningEnum) ),
+      jobSearch : a.enum( Object.keys(searchEnum) ),
+      jobSuccess: a.enum( Object.keys(searchResultEnum) ),
+      lastWorked: a.enum( Object.keys(recencyEnum) ),
+      maritalStatus: a.enum( Object.keys(maritalEnum) ),
+      singleType: a.enum( Object.keys(singleTypeEnum) ),
+      kidsAge: a.enum( Object.keys(ageEnum) ),
+      spouseSupportKids: a.enum( Object.keys(supportEnum) ),
+      helperSupportKids: a.enum( Object.keys(supportEnum) ),
+      familySupportKids: a.enum( Object.keys(supportEnum) ),
+      spouseSupportHousehold: a.enum( Object.keys(supportEnum) ),
+      helperSupportHousehold: a.enum( Object.keys(supportEnum) ),
+      familySupportHousehold: a.enum( Object.keys(supportEnum) ),      
+      careGiving: a.enum( Object.keys(careEnum) ),
+      extentOfCareGiving: a.enum( Object.keys(extentEnum) ),
+      helperSupportCareGiving: a.enum( Object.keys(supportEnum) ),
+      readyToExtendSupport: a.enum( Object.keys(supportEnum) ),
+      OtherCommitments: a.enum( Object.keys(commitmentsEnum) ),
+      comment : a.string(),
     })
-    .authorization((allow) => [allow.publicApiKey()]),
+    .authorization((allow: { publicApiKey: () => any; }) => [allow.publicApiKey()]),
 });
 
-export type Schema = ClientSchema<typeof schema>;
-
+export type FormSchema = ClientSchema<typeof schema>;
+// console.log(schema.models["Question"]);
 export const data = defineData({
   schema,
   authorizationModes: {

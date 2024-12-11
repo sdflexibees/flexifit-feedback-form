@@ -1,10 +1,8 @@
 body {
   margin: 0;
-  background: linear-gradient(180deg, rgb(117, 81, 194), rgb(255, 255, 255));
-  display: flex;
+  background: linear-gradient(180deg, #f7b616, rgb(255, 255, 255));
+  
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  height: 100vh;
-  width: 100vw;
   justify-content: center;
   align-items: center;
 }
@@ -12,15 +10,48 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  
+}
+form {
+  padding: 5px
+}
+.form:after, .label:after, .input:after{
+  border: 1px dashed black;
+  display: table;
+  content: " ";
+  clear: both;
+}
+.amplify-tabs {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  height: 100%;
+  padding: 5px;
+  width: 50%;
+  float: left;
+  text-align: right;
+  /* border: 1px dashed black; */
+}
+input, select {
+  height: 100%;
+  padding: 8px;
+  
+  /* border: 1px dashed black; */
+}
+svg {
+  visibility: hidden;
 }
 
+.amplify-grid {
+  border:#1a1a1a
+}
 button {
-  border-radius: 8px;
+  border-radius: 80px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.4em; 
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 50;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
@@ -35,6 +66,35 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.amplify-label {
+  padding: 1em 1em 1em 1em;
+}
+.amplify-grid{
+  columns: 3;
+}
+.amplify-flex {
+  flex-direction: row;
+  display: flex;
+  align-content: center;
+
+}
+.amplify-label {
+  font-style: italic;
+  padding: 1em 1em 1em 1em;
+}
+.amplify-select__wrapper {
+  padding: 1em 1em 1em 1em;
+}
+.amplify-field-group.amplify-field-group--horizontal {
+  padding: 1em 1em 1em 1em;
+}
+.input[required]{
+  background-image: radial-gradient(#F00 15%, transparent 16%), radial-gradient(#F00 15%, transparent 16%);
+  background-size: 1em 1em;
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+.form-group.required .control-label:after {content:"*";color:red;}
 ul {
   padding-inline-start: 0;
   margin-block-start: 0;
@@ -42,24 +102,11 @@ ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  margin: 8px 0;
+  padding: 0.5em;
   border: 1px solid black;
   gap: 1px;
   background-color: black;
   border-radius: 8px;
   overflow: auto;
-}
-
-li {
-  background-color: white;
-  padding: 8px;
-}
-
-li:hover {
-  background: #dadbf9;
-}
-
-a {
-  font-weight: 800;
-  text-decoration: none;
+  margin: 1em 3em 0em 1em;
 }
