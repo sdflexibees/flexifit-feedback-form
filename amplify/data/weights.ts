@@ -1,5 +1,4 @@
-import {  type ClientSchema, a, defineData,  } from "@aws-amplify/backend";
-import {  ModelField } from "@aws-amplify/data-schema";
+import {  a  } from "@aws-amplify/backend";
 import { recencyEnum, maritalEnum, singleTypeEnum, ageEnum, supportEnum, careEnum, extentEnum, commitmentsEnum } from "./constants";
  
 
@@ -47,7 +46,3 @@ export function getField(searchFor: string | number){
     });
     return result;
 }
-
-console.log("-------------------------------------------------------------******************************************")
-
-console.log(getField("datatype"));
