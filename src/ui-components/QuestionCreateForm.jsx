@@ -6,6 +6,7 @@ import {
   Flex,
   Grid,
   SelectField,
+  TextAreaField,
   TextField,
 } from "@aws-amplify/ui-react";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
@@ -2364,7 +2365,7 @@ export default function QuestionCreateForm(props) {
           {...getOverrideProps(overrides, "OtherCommitmentsoption2")}
         ></option>
       </SelectField>
-      <TextField
+      <TextAreaField
         label="Comment"
         isRequired={false}
         isReadOnly={false}
@@ -2417,9 +2418,9 @@ export default function QuestionCreateForm(props) {
         errorMessage={errors.comment?.errorMessage}
         hasError={errors.comment?.hasError}
         {...getOverrideProps(overrides, "comment")}
-      ></TextField>
+      ></TextAreaField>
       <Flex
-        justifyContent="space-between"
+        justifyContent="space-evenly"
         {...getOverrideProps(overrides, "CTAFlex")}
       >
         <Button
@@ -2432,8 +2433,6 @@ export default function QuestionCreateForm(props) {
           {...getOverrideProps(overrides, "ClearButton")}
         ></Button>
         <Flex
-          gap="15px"
-          {...getOverrideProps(overrides, "RightAlignCTASubFlex")}
         >
           <Button
             children="Submit"
