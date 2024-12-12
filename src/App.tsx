@@ -10,7 +10,7 @@ const client = generateClient<FormSchema>();
 function App() {
   const [questions, setQuestions] = useState<FormSchema["Question"]["type"][]>([]);
   const fetchQuestions = async () => {
-    const { data: items, errors } = await client.models.Question.list();
+    const { data: items } = await client.models.Question.list();
     setQuestions(items);
   };
 
