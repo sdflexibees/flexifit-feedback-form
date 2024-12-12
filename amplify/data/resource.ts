@@ -1,6 +1,6 @@
 import { type ClientSchema, a, defineData } from "@aws-amplify/backend";
 import { ageEnum, careEnum, careerAmbition, commitmentsEnum, contractEnum, extentEnum, financeEnum, learningEnum, maritalEnum, recencyEnum, roleEnum, searchEnum, searchResultEnum, singleTypeEnum, supportEnum, workEnum } from "./constants";
-import { getField } from "./weights";
+
 
 const schema = a.schema({  
   Question : a.model({
