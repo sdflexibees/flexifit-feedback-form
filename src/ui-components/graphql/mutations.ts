@@ -8,39 +8,44 @@ export const createQuestion = /* GraphQL */ `
     $input: CreateQuestionInput!
   ) {
     createQuestion(condition: $condition, input: $input) {
+      AgeOfYoungestKid
+      AvailabilityOfHoursIdentifiedByInterviewer
+      DriveToWorkOrIntentToWork
+      ImmediateCareerAmbitions
+      JobSearchAndReadiness
+      JobSearchSuccessForShortTermJobs
+      Location
       OtherCommitments
+      ResponsibilitiesAndRoles
+      Single
+      SupportFromHelpersForCareGivingChores
+      SupportFromHelpersForHouseholdChores
+      SupportFromHelpersForKids
+      SupportFromOtherFamilyMembersForHouseholdChores
+      SupportFromOtherFamilyMembersForKids
+      SupportFromSpouseForHouseholdChores
+      SupportFromSpouseForKids
+      TypeOfRoleSuitableFor
+      WillingnessToExpandHelpSystem
+      candidateAge
+      candidateEmail
       candidateId
       candidateLocation
       candidateName
-      careGiving
-      careerAmbition
+      candidatePhone
+      careGivingResponsibilities
       comment
       createdAt
-      driveToWork
       extentOfCareGiving
-      familySupportHousehold
-      familySupportKids
-      financialDrive
-      helperSupportCareGiving
-      helperSupportHousehold
-      helperSupportKids
+      financialDriveToWork
       id
       interviewDate
       interviewer
       interviewerJobLocation
-      jobLocation
-      jobSearch
-      jobSuccess
-      kidsAge
       lastWorked
       learningReadiness
       maritalStatus
-      readyToExtendSupport
-      roles
-      singleType
-      spouseSupportHousehold
-      spouseSupportKids
-      typeOfContract
+      typeOfContractSuggested
       updatedAt
       __typename
     }
@@ -52,39 +57,44 @@ export const deleteQuestion = /* GraphQL */ `
     $input: DeleteQuestionInput!
   ) {
     deleteQuestion(condition: $condition, input: $input) {
+      AgeOfYoungestKid
+      AvailabilityOfHoursIdentifiedByInterviewer
+      DriveToWorkOrIntentToWork
+      ImmediateCareerAmbitions
+      JobSearchAndReadiness
+      JobSearchSuccessForShortTermJobs
+      Location
       OtherCommitments
+      ResponsibilitiesAndRoles
+      Single
+      SupportFromHelpersForCareGivingChores
+      SupportFromHelpersForHouseholdChores
+      SupportFromHelpersForKids
+      SupportFromOtherFamilyMembersForHouseholdChores
+      SupportFromOtherFamilyMembersForKids
+      SupportFromSpouseForHouseholdChores
+      SupportFromSpouseForKids
+      TypeOfRoleSuitableFor
+      WillingnessToExpandHelpSystem
+      candidateAge
+      candidateEmail
       candidateId
       candidateLocation
       candidateName
-      careGiving
-      careerAmbition
+      candidatePhone
+      careGivingResponsibilities
       comment
       createdAt
-      driveToWork
       extentOfCareGiving
-      familySupportHousehold
-      familySupportKids
-      financialDrive
-      helperSupportCareGiving
-      helperSupportHousehold
-      helperSupportKids
+      financialDriveToWork
       id
       interviewDate
       interviewer
       interviewerJobLocation
-      jobLocation
-      jobSearch
-      jobSuccess
-      kidsAge
       lastWorked
       learningReadiness
       maritalStatus
-      readyToExtendSupport
-      roles
-      singleType
-      spouseSupportHousehold
-      spouseSupportKids
-      typeOfContract
+      typeOfContractSuggested
       updatedAt
       __typename
     }
@@ -96,39 +106,44 @@ export const updateQuestion = /* GraphQL */ `
     $input: UpdateQuestionInput!
   ) {
     updateQuestion(condition: $condition, input: $input) {
+      AgeOfYoungestKid
+      AvailabilityOfHoursIdentifiedByInterviewer
+      DriveToWorkOrIntentToWork
+      ImmediateCareerAmbitions
+      JobSearchAndReadiness
+      JobSearchSuccessForShortTermJobs
+      Location
       OtherCommitments
+      ResponsibilitiesAndRoles
+      Single
+      SupportFromHelpersForCareGivingChores
+      SupportFromHelpersForHouseholdChores
+      SupportFromHelpersForKids
+      SupportFromOtherFamilyMembersForHouseholdChores
+      SupportFromOtherFamilyMembersForKids
+      SupportFromSpouseForHouseholdChores
+      SupportFromSpouseForKids
+      TypeOfRoleSuitableFor
+      WillingnessToExpandHelpSystem
+      candidateAge
+      candidateEmail
       candidateId
       candidateLocation
       candidateName
-      careGiving
-      careerAmbition
+      candidatePhone
+      careGivingResponsibilities
       comment
       createdAt
-      driveToWork
       extentOfCareGiving
-      familySupportHousehold
-      familySupportKids
-      financialDrive
-      helperSupportCareGiving
-      helperSupportHousehold
-      helperSupportKids
+      financialDriveToWork
       id
       interviewDate
       interviewer
       interviewerJobLocation
-      jobLocation
-      jobSearch
-      jobSuccess
-      kidsAge
       lastWorked
       learningReadiness
       maritalStatus
-      readyToExtendSupport
-      roles
-      singleType
-      spouseSupportHousehold
-      spouseSupportKids
-      typeOfContract
+      typeOfContractSuggested
       updatedAt
       __typename
     }
