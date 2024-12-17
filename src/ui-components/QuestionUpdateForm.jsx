@@ -30,7 +30,7 @@ export default function QuestionUpdateForm(props) {
     candidateAge: "",
     candidateId: "",
     candidateLocation: "",
-    interViewDate: "",
+    interviewDate: "",
     interviewer: "",
     Location: "",
     interviewerJobLocation: "",
@@ -73,8 +73,8 @@ export default function QuestionUpdateForm(props) {
   const [candidateLocation, setCandidateLocation] = React.useState(
     initialValues.candidateLocation
   );
-  const [interViewDate, setInterViewDate] = React.useState(
-    initialValues.interViewDate
+  const [interviewDate, setInterviewDate] = React.useState(
+    initialValues.interviewDate
   );
   const [interviewer, setInterviewer] = React.useState(
     initialValues.interviewer
@@ -166,7 +166,7 @@ export default function QuestionUpdateForm(props) {
     setCandidateAge(cleanValues.candidateAge);
     setCandidateId(cleanValues.candidateId);
     setCandidateLocation(cleanValues.candidateLocation);
-    setInterViewDate(cleanValues.interViewDate);
+    setInterviewDate(cleanValues.interviewDate);
     setInterviewer(cleanValues.interviewer);
     setLocation(cleanValues.Location);
     setInterviewerJobLocation(cleanValues.interviewerJobLocation);
@@ -233,7 +233,7 @@ export default function QuestionUpdateForm(props) {
     candidateAge: [],
     candidateId: [{ type: "Required" }],
     candidateLocation: [{ type: "Required" }],
-    interViewDate: [{ type: "Required" }],
+    interviewDate: [{ type: "Required" }],
     interviewer: [{ type: "Required" }],
     Location: [{ type: "Required" }],
     interviewerJobLocation: [],
@@ -294,7 +294,7 @@ export default function QuestionUpdateForm(props) {
           candidateAge: candidateAge ?? null,
           candidateId,
           candidateLocation,
-          interViewDate,
+          interviewDate,
           interviewer,
           Location,
           interviewerJobLocation: interviewerJobLocation ?? null,
@@ -395,7 +395,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -452,7 +452,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge: value,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -530,7 +530,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId: value,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -587,7 +587,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation: value,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -634,11 +634,11 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "candidateLocation")}
       ></TextField>
       <TextField
-        label="Inter view date"
+        label="Interview date"
         isRequired={true}
         isReadOnly={false}
         type="date"
-        value={interViewDate}
+        value={interviewDate}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -647,7 +647,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate: value,
+              interviewDate: value,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -679,17 +679,17 @@ export default function QuestionUpdateForm(props) {
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.interViewDate ?? value;
+            value = result?.interviewDate ?? value;
           }
-          if (errors.interViewDate?.hasError) {
-            runValidationTasks("interViewDate", value);
+          if (errors.interviewDate?.hasError) {
+            runValidationTasks("interviewDate", value);
           }
-          setInterViewDate(value);
+          setInterviewDate(value);
         }}
-        onBlur={() => runValidationTasks("interViewDate", interViewDate)}
-        errorMessage={errors.interViewDate?.errorMessage}
-        hasError={errors.interViewDate?.hasError}
-        {...getOverrideProps(overrides, "interViewDate")}
+        onBlur={() => runValidationTasks("interviewDate", interviewDate)}
+        errorMessage={errors.interviewDate?.errorMessage}
+        hasError={errors.interviewDate?.hasError}
+        {...getOverrideProps(overrides, "interviewDate")}
       ></TextField>
       <TextField
         label="Interviewer"
@@ -704,7 +704,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer: value,
               Location,
               interviewerJobLocation,
@@ -761,7 +761,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location: value,
               interviewerJobLocation,
@@ -818,7 +818,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation: value,
@@ -877,7 +877,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -955,7 +955,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1003,12 +1003,12 @@ export default function QuestionUpdateForm(props) {
       >
         <option
           children="Short term"
-          value="short_term"
+          value="Short_Term"
           {...getOverrideProps(overrides, "TypeOfRoleSuitableForoption0")}
         ></option>
         <option
           children="Long term"
-          value="long_term"
+          value="Long_Term"
           {...getOverrideProps(overrides, "TypeOfRoleSuitableForoption1")}
         ></option>
       </SelectField>
@@ -1025,7 +1025,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1073,12 +1073,12 @@ export default function QuestionUpdateForm(props) {
       >
         <option
           children="Short term"
-          value="short_term"
+          value="Short_Term"
           {...getOverrideProps(overrides, "typeOfContractSuggestedoption0")}
         ></option>
         <option
           children="Long term"
-          value="long_term"
+          value="Long_Term"
           {...getOverrideProps(overrides, "typeOfContractSuggestedoption1")}
         ></option>
       </SelectField>
@@ -1095,7 +1095,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1146,17 +1146,17 @@ export default function QuestionUpdateForm(props) {
       >
         <option
           children="Very high"
-          value="very_high"
+          value="Very_high"
           {...getOverrideProps(overrides, "DriveToWorkOrIntentToWorkoption0")}
         ></option>
         <option
           children="High"
-          value="high"
+          value="High"
           {...getOverrideProps(overrides, "DriveToWorkOrIntentToWorkoption1")}
         ></option>
         <option
           children="Low"
-          value="low"
+          value="Low"
           {...getOverrideProps(overrides, "DriveToWorkOrIntentToWorkoption2")}
         ></option>
       </SelectField>
@@ -1173,7 +1173,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1256,7 +1256,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1331,7 +1331,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1401,7 +1401,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1476,7 +1476,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1555,7 +1555,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1628,7 +1628,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1701,7 +1701,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1756,8 +1756,8 @@ export default function QuestionUpdateForm(props) {
           {...getOverrideProps(overrides, "Singleoption1")}
         ></option>
         <option
-          children="Separated divorced"
-          value="Separated_Divorced"
+          children="Separated or divorced"
+          value="Separated_Or_Divorced"
           {...getOverrideProps(overrides, "Singleoption2")}
         ></option>
       </SelectField>
@@ -1774,7 +1774,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1820,7 +1820,7 @@ export default function QuestionUpdateForm(props) {
       >
         <option
           children="No kids"
-          value="No_kids"
+          value="No_Kids"
           {...getOverrideProps(overrides, "AgeOfYoungestKidoption0")}
         ></option>
         <option
@@ -1857,7 +1857,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1940,7 +1940,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2035,7 +2035,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2118,7 +2118,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2213,7 +2213,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2308,7 +2308,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2416,7 +2416,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2489,7 +2489,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2569,7 +2569,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2669,7 +2669,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2764,7 +2764,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2809,8 +2809,8 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "OtherCommitments")}
       >
         <option
-          children="None few"
-          value="None_Few"
+          children="None or few"
+          value="None_Or_Few"
           {...getOverrideProps(overrides, "OtherCommitmentsoption0")}
         ></option>
         <option
@@ -2819,8 +2819,8 @@ export default function QuestionUpdateForm(props) {
           {...getOverrideProps(overrides, "OtherCommitmentsoption1")}
         ></option>
         <option
-          children="Moderate manageable"
-          value="Moderate_Manageable"
+          children="Moderate and manageable"
+          value="Moderate_And_Manageable"
           {...getOverrideProps(overrides, "OtherCommitmentsoption2")}
         ></option>
       </SelectField>
@@ -2841,7 +2841,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2911,7 +2911,7 @@ export default function QuestionUpdateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
-              interViewDate,
+              interviewDate,
               interviewer,
               Location,
               interviewerJobLocation,

@@ -34,7 +34,7 @@ export const getQuestion = /* GraphQL */ `
       extentOfCareGiving
       financialDriveToWork
       id
-      interViewDate
+      interviewDate
       interviewer
       interviewerJobLocation
       lastWorked
@@ -83,7 +83,7 @@ export const listQuestions = /* GraphQL */ `
         extentOfCareGiving
         financialDriveToWork
         id
-        interViewDate
+        interviewDate
         interviewer
         interviewerJobLocation
         lastWorked

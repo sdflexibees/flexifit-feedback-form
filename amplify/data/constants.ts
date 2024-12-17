@@ -52,7 +52,7 @@ export const  roleEnum =  {
   
   }
   export const  kidsAgeEnum =  {
-    No_kids : 0 ,
+    No_Kids : 0 ,
     Yrs_0_to_5 : 1 ,
     Yrs_5_to_12 : 2 ,
     Yrs_12_to_16 : 3 ,
@@ -66,13 +66,13 @@ export const  roleEnum =  {
   export const  singleTypeEnum =  {
     Not_Applicable : 0 ,
     UnMarried : 1 ,
-    Separated_Divorced :2
+    Separated_Or_Divorced :2
   }
   
   export const  workEnum =  {
-    very_high : 3 ,
-    high : 2 ,
-    low :1
+    Very_high : 3 ,
+    High : 2 ,
+    Low :1
   }
   export const  careEnum =  {
     YES : 1 ,
@@ -85,8 +85,8 @@ export const  roleEnum =  {
     Partial_care :2
   }
   export const  contractEnum =  {
-    short_term : 2 ,
-    long_term :1
+    Short_Term : 2 ,
+    Long_Term :1
   }
   export const  supportEnum =  {
     Not_Applicable : 0 ,
@@ -96,8 +96,8 @@ export const  roleEnum =  {
   }
     
   export const  commitmentsEnum =  {
-    None_Few : 0 ,
+    None_Or_Few : 0 ,
     Many : 1 ,
-    Moderate_Manageable : 2 
+    Moderate_And_Manageable : 2 
     
   }
