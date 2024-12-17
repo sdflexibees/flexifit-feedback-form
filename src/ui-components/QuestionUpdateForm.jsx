@@ -27,39 +27,44 @@ export default function QuestionUpdateForm(props) {
   } = props;
   const initialValues = {
     candidateName: "",
+    candidateAge: "",
     candidateId: "",
     candidateLocation: "",
     interviewer: "",
-    interviewDate: "",
-    jobLocation: "",
-    roles: "",
+    Location: "",
     interviewerJobLocation: "",
-    typeOfContract: "",
-    driveToWork: "",
-    careerAmbition: "",
-    financialDrive: "",
+    ResponsibilitiesAndRoles: "",
+    TypeOfRoleSuitableFor: "",
+    typeOfContractSuggested: "",
+    DriveToWorkOrIntentToWork: "",
+    ImmediateCareerAmbitions: "",
+    financialDriveToWork: "",
     learningReadiness: "",
-    jobSearch: "",
-    jobSuccess: "",
+    JobSearchAndReadiness: "",
+    JobSearchSuccessForShortTermJobs: "",
     lastWorked: "",
     maritalStatus: "",
-    singleType: "",
-    kidsAge: "",
-    spouseSupportKids: "",
-    helperSupportKids: "",
-    familySupportKids: "",
-    spouseSupportHousehold: "",
-    helperSupportHousehold: "",
-    familySupportHousehold: "",
-    careGiving: "",
+    Single: "",
+    AgeOfYoungestKid: "",
+    SupportFromSpouseForKids: "",
+    SupportFromSpouseForHouseholdChores: "",
+    SupportFromHelpersForKids: "",
+    SupportFromHelpersForHouseholdChores: "",
+    SupportFromOtherFamilyMembersForKids: "",
+    SupportFromOtherFamilyMembersForHouseholdChores: "",
+    careGivingResponsibilities: "",
     extentOfCareGiving: "",
-    helperSupportCareGiving: "",
-    readyToExtendSupport: "",
+    SupportFromHelpersForCareGivingChores: "",
+    WillingnessToExpandHelpSystem: "",
     OtherCommitments: "",
+    AvailabilityOfHoursIdentifiedByInterviewer: "",
     comment: "",
   };
   const [candidateName, setCandidateName] = React.useState(
     initialValues.candidateName
+  );
+  const [candidateAge, setCandidateAge] = React.useState(
+    initialValues.candidateAge
   );
   const [candidateId, setCandidateId] = React.useState(
     initialValues.candidateId
@@ -70,70 +75,83 @@ export default function QuestionUpdateForm(props) {
   const [interviewer, setInterviewer] = React.useState(
     initialValues.interviewer
   );
-  const [interviewDate, setInterviewDate] = React.useState(
-    initialValues.interviewDate
-  );
-  const [jobLocation, setJobLocation] = React.useState(
-    initialValues.jobLocation
-  );
-  const [roles, setRoles] = React.useState(initialValues.roles);
+  const [Location, setLocation] = React.useState(initialValues.Location);
   const [interviewerJobLocation, setInterviewerJobLocation] = React.useState(
     initialValues.interviewerJobLocation
   );
-  const [typeOfContract, setTypeOfContract] = React.useState(
-    initialValues.typeOfContract
+  const [ResponsibilitiesAndRoles, setResponsibilitiesAndRoles] =
+    React.useState(initialValues.ResponsibilitiesAndRoles);
+  const [TypeOfRoleSuitableFor, setTypeOfRoleSuitableFor] = React.useState(
+    initialValues.TypeOfRoleSuitableFor
   );
-  const [driveToWork, setDriveToWork] = React.useState(
-    initialValues.driveToWork
+  const [typeOfContractSuggested, setTypeOfContractSuggested] = React.useState(
+    initialValues.typeOfContractSuggested
   );
-  const [careerAmbition, setCareerAmbition] = React.useState(
-    initialValues.careerAmbition
-  );
-  const [financialDrive, setFinancialDrive] = React.useState(
-    initialValues.financialDrive
+  const [DriveToWorkOrIntentToWork, setDriveToWorkOrIntentToWork] =
+    React.useState(initialValues.DriveToWorkOrIntentToWork);
+  const [ImmediateCareerAmbitions, setImmediateCareerAmbitions] =
+    React.useState(initialValues.ImmediateCareerAmbitions);
+  const [financialDriveToWork, setFinancialDriveToWork] = React.useState(
+    initialValues.financialDriveToWork
   );
   const [learningReadiness, setLearningReadiness] = React.useState(
     initialValues.learningReadiness
   );
-  const [jobSearch, setJobSearch] = React.useState(initialValues.jobSearch);
-  const [jobSuccess, setJobSuccess] = React.useState(initialValues.jobSuccess);
+  const [JobSearchAndReadiness, setJobSearchAndReadiness] = React.useState(
+    initialValues.JobSearchAndReadiness
+  );
+  const [
+    JobSearchSuccessForShortTermJobs,
+    setJobSearchSuccessForShortTermJobs,
+  ] = React.useState(initialValues.JobSearchSuccessForShortTermJobs);
   const [lastWorked, setLastWorked] = React.useState(initialValues.lastWorked);
   const [maritalStatus, setMaritalStatus] = React.useState(
     initialValues.maritalStatus
   );
-  const [singleType, setSingleType] = React.useState(initialValues.singleType);
-  const [kidsAge, setKidsAge] = React.useState(initialValues.kidsAge);
-  const [spouseSupportKids, setSpouseSupportKids] = React.useState(
-    initialValues.spouseSupportKids
+  const [Single, setSingle] = React.useState(initialValues.Single);
+  const [AgeOfYoungestKid, setAgeOfYoungestKid] = React.useState(
+    initialValues.AgeOfYoungestKid
   );
-  const [helperSupportKids, setHelperSupportKids] = React.useState(
-    initialValues.helperSupportKids
+  const [SupportFromSpouseForKids, setSupportFromSpouseForKids] =
+    React.useState(initialValues.SupportFromSpouseForKids);
+  const [
+    SupportFromSpouseForHouseholdChores,
+    setSupportFromSpouseForHouseholdChores,
+  ] = React.useState(initialValues.SupportFromSpouseForHouseholdChores);
+  const [SupportFromHelpersForKids, setSupportFromHelpersForKids] =
+    React.useState(initialValues.SupportFromHelpersForKids);
+  const [
+    SupportFromHelpersForHouseholdChores,
+    setSupportFromHelpersForHouseholdChores,
+  ] = React.useState(initialValues.SupportFromHelpersForHouseholdChores);
+  const [
+    SupportFromOtherFamilyMembersForKids,
+    setSupportFromOtherFamilyMembersForKids,
+  ] = React.useState(initialValues.SupportFromOtherFamilyMembersForKids);
+  const [
+    SupportFromOtherFamilyMembersForHouseholdChores,
+    setSupportFromOtherFamilyMembersForHouseholdChores,
+  ] = React.useState(
+    initialValues.SupportFromOtherFamilyMembersForHouseholdChores
   );
-  const [familySupportKids, setFamilySupportKids] = React.useState(
-    initialValues.familySupportKids
-  );
-  const [spouseSupportHousehold, setSpouseSupportHousehold] = React.useState(
-    initialValues.spouseSupportHousehold
-  );
-  const [helperSupportHousehold, setHelperSupportHousehold] = React.useState(
-    initialValues.helperSupportHousehold
-  );
-  const [familySupportHousehold, setFamilySupportHousehold] = React.useState(
-    initialValues.familySupportHousehold
-  );
-  const [careGiving, setCareGiving] = React.useState(initialValues.careGiving);
+  const [careGivingResponsibilities, setCareGivingResponsibilities] =
+    React.useState(initialValues.careGivingResponsibilities);
   const [extentOfCareGiving, setExtentOfCareGiving] = React.useState(
     initialValues.extentOfCareGiving
   );
-  const [helperSupportCareGiving, setHelperSupportCareGiving] = React.useState(
-    initialValues.helperSupportCareGiving
-  );
-  const [readyToExtendSupport, setReadyToExtendSupport] = React.useState(
-    initialValues.readyToExtendSupport
-  );
+  const [
+    SupportFromHelpersForCareGivingChores,
+    setSupportFromHelpersForCareGivingChores,
+  ] = React.useState(initialValues.SupportFromHelpersForCareGivingChores);
+  const [WillingnessToExpandHelpSystem, setWillingnessToExpandHelpSystem] =
+    React.useState(initialValues.WillingnessToExpandHelpSystem);
   const [OtherCommitments, setOtherCommitments] = React.useState(
     initialValues.OtherCommitments
   );
+  const [
+    AvailabilityOfHoursIdentifiedByInterviewer,
+    setAvailabilityOfHoursIdentifiedByInterviewer,
+  ] = React.useState(initialValues.AvailabilityOfHoursIdentifiedByInterviewer);
   const [comment, setComment] = React.useState(initialValues.comment);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
@@ -141,35 +159,51 @@ export default function QuestionUpdateForm(props) {
       ? { ...initialValues, ...questionRecord }
       : initialValues;
     setCandidateName(cleanValues.candidateName);
+    setCandidateAge(cleanValues.candidateAge);
     setCandidateId(cleanValues.candidateId);
     setCandidateLocation(cleanValues.candidateLocation);
     setInterviewer(cleanValues.interviewer);
-    setInterviewDate(cleanValues.interviewDate);
-    setJobLocation(cleanValues.jobLocation);
-    setRoles(cleanValues.roles);
+    setLocation(cleanValues.Location);
     setInterviewerJobLocation(cleanValues.interviewerJobLocation);
-    setTypeOfContract(cleanValues.typeOfContract);
-    setDriveToWork(cleanValues.driveToWork);
-    setCareerAmbition(cleanValues.careerAmbition);
-    setFinancialDrive(cleanValues.financialDrive);
+    setResponsibilitiesAndRoles(cleanValues.ResponsibilitiesAndRoles);
+    setTypeOfRoleSuitableFor(cleanValues.TypeOfRoleSuitableFor);
+    setTypeOfContractSuggested(cleanValues.typeOfContractSuggested);
+    setDriveToWorkOrIntentToWork(cleanValues.DriveToWorkOrIntentToWork);
+    setImmediateCareerAmbitions(cleanValues.ImmediateCareerAmbitions);
+    setFinancialDriveToWork(cleanValues.financialDriveToWork);
     setLearningReadiness(cleanValues.learningReadiness);
-    setJobSearch(cleanValues.jobSearch);
-    setJobSuccess(cleanValues.jobSuccess);
+    setJobSearchAndReadiness(cleanValues.JobSearchAndReadiness);
+    setJobSearchSuccessForShortTermJobs(
+      cleanValues.JobSearchSuccessForShortTermJobs
+    );
     setLastWorked(cleanValues.lastWorked);
     setMaritalStatus(cleanValues.maritalStatus);
-    setSingleType(cleanValues.singleType);
-    setKidsAge(cleanValues.kidsAge);
-    setSpouseSupportKids(cleanValues.spouseSupportKids);
-    setHelperSupportKids(cleanValues.helperSupportKids);
-    setFamilySupportKids(cleanValues.familySupportKids);
-    setSpouseSupportHousehold(cleanValues.spouseSupportHousehold);
-    setHelperSupportHousehold(cleanValues.helperSupportHousehold);
-    setFamilySupportHousehold(cleanValues.familySupportHousehold);
-    setCareGiving(cleanValues.careGiving);
+    setSingle(cleanValues.Single);
+    setAgeOfYoungestKid(cleanValues.AgeOfYoungestKid);
+    setSupportFromSpouseForKids(cleanValues.SupportFromSpouseForKids);
+    setSupportFromSpouseForHouseholdChores(
+      cleanValues.SupportFromSpouseForHouseholdChores
+    );
+    setSupportFromHelpersForKids(cleanValues.SupportFromHelpersForKids);
+    setSupportFromHelpersForHouseholdChores(
+      cleanValues.SupportFromHelpersForHouseholdChores
+    );
+    setSupportFromOtherFamilyMembersForKids(
+      cleanValues.SupportFromOtherFamilyMembersForKids
+    );
+    setSupportFromOtherFamilyMembersForHouseholdChores(
+      cleanValues.SupportFromOtherFamilyMembersForHouseholdChores
+    );
+    setCareGivingResponsibilities(cleanValues.careGivingResponsibilities);
     setExtentOfCareGiving(cleanValues.extentOfCareGiving);
-    setHelperSupportCareGiving(cleanValues.helperSupportCareGiving);
-    setReadyToExtendSupport(cleanValues.readyToExtendSupport);
+    setSupportFromHelpersForCareGivingChores(
+      cleanValues.SupportFromHelpersForCareGivingChores
+    );
+    setWillingnessToExpandHelpSystem(cleanValues.WillingnessToExpandHelpSystem);
     setOtherCommitments(cleanValues.OtherCommitments);
+    setAvailabilityOfHoursIdentifiedByInterviewer(
+      cleanValues.AvailabilityOfHoursIdentifiedByInterviewer
+    );
     setComment(cleanValues.comment);
     setErrors({});
   };
@@ -191,35 +225,37 @@ export default function QuestionUpdateForm(props) {
   React.useEffect(resetStateValues, [questionRecord]);
   const validations = {
     candidateName: [{ type: "Required" }],
+    candidateAge: [],
     candidateId: [{ type: "Required" }],
     candidateLocation: [{ type: "Required" }],
     interviewer: [{ type: "Required" }],
-    interviewDate: [{ type: "Required" }],
-    jobLocation: [{ type: "Required" }],
-    roles: [],
+    Location: [{ type: "Required" }],
     interviewerJobLocation: [],
-    typeOfContract: [],
-    driveToWork: [],
-    careerAmbition: [],
-    financialDrive: [],
+    ResponsibilitiesAndRoles: [],
+    TypeOfRoleSuitableFor: [],
+    typeOfContractSuggested: [],
+    DriveToWorkOrIntentToWork: [],
+    ImmediateCareerAmbitions: [],
+    financialDriveToWork: [],
     learningReadiness: [],
-    jobSearch: [],
-    jobSuccess: [],
+    JobSearchAndReadiness: [],
+    JobSearchSuccessForShortTermJobs: [],
     lastWorked: [],
     maritalStatus: [],
-    singleType: [],
-    kidsAge: [],
-    spouseSupportKids: [],
-    helperSupportKids: [],
-    familySupportKids: [],
-    spouseSupportHousehold: [],
-    helperSupportHousehold: [],
-    familySupportHousehold: [],
-    careGiving: [],
+    Single: [],
+    AgeOfYoungestKid: [],
+    SupportFromSpouseForKids: [],
+    SupportFromSpouseForHouseholdChores: [],
+    SupportFromHelpersForKids: [],
+    SupportFromHelpersForHouseholdChores: [],
+    SupportFromOtherFamilyMembersForKids: [],
+    SupportFromOtherFamilyMembersForHouseholdChores: [],
+    careGivingResponsibilities: [],
     extentOfCareGiving: [],
-    helperSupportCareGiving: [],
-    readyToExtendSupport: [],
+    SupportFromHelpersForCareGivingChores: [],
+    WillingnessToExpandHelpSystem: [],
     OtherCommitments: [],
+    AvailabilityOfHoursIdentifiedByInterviewer: [],
     comment: [],
   };
   const runValidationTasks = async (
@@ -249,35 +285,44 @@ export default function QuestionUpdateForm(props) {
         event.preventDefault();
         let modelFields = {
           candidateName,
+          candidateAge: candidateAge ?? null,
           candidateId,
           candidateLocation,
           interviewer,
-          interviewDate,
-          jobLocation,
-          roles: roles ?? null,
+          Location,
           interviewerJobLocation: interviewerJobLocation ?? null,
-          typeOfContract: typeOfContract ?? null,
-          driveToWork: driveToWork ?? null,
-          careerAmbition: careerAmbition ?? null,
-          financialDrive: financialDrive ?? null,
+          ResponsibilitiesAndRoles: ResponsibilitiesAndRoles ?? null,
+          TypeOfRoleSuitableFor: TypeOfRoleSuitableFor ?? null,
+          typeOfContractSuggested: typeOfContractSuggested ?? null,
+          DriveToWorkOrIntentToWork: DriveToWorkOrIntentToWork ?? null,
+          ImmediateCareerAmbitions: ImmediateCareerAmbitions ?? null,
+          financialDriveToWork: financialDriveToWork ?? null,
           learningReadiness: learningReadiness ?? null,
-          jobSearch: jobSearch ?? null,
-          jobSuccess: jobSuccess ?? null,
+          JobSearchAndReadiness: JobSearchAndReadiness ?? null,
+          JobSearchSuccessForShortTermJobs:
+            JobSearchSuccessForShortTermJobs ?? null,
           lastWorked: lastWorked ?? null,
           maritalStatus: maritalStatus ?? null,
-          singleType: singleType ?? null,
-          kidsAge: kidsAge ?? null,
-          spouseSupportKids: spouseSupportKids ?? null,
-          helperSupportKids: helperSupportKids ?? null,
-          familySupportKids: familySupportKids ?? null,
-          spouseSupportHousehold: spouseSupportHousehold ?? null,
-          helperSupportHousehold: helperSupportHousehold ?? null,
-          familySupportHousehold: familySupportHousehold ?? null,
-          careGiving: careGiving ?? null,
+          Single: Single ?? null,
+          AgeOfYoungestKid: AgeOfYoungestKid ?? null,
+          SupportFromSpouseForKids: SupportFromSpouseForKids ?? null,
+          SupportFromSpouseForHouseholdChores:
+            SupportFromSpouseForHouseholdChores ?? null,
+          SupportFromHelpersForKids: SupportFromHelpersForKids ?? null,
+          SupportFromHelpersForHouseholdChores:
+            SupportFromHelpersForHouseholdChores ?? null,
+          SupportFromOtherFamilyMembersForKids:
+            SupportFromOtherFamilyMembersForKids ?? null,
+          SupportFromOtherFamilyMembersForHouseholdChores:
+            SupportFromOtherFamilyMembersForHouseholdChores ?? null,
+          careGivingResponsibilities: careGivingResponsibilities ?? null,
           extentOfCareGiving: extentOfCareGiving ?? null,
-          helperSupportCareGiving: helperSupportCareGiving ?? null,
-          readyToExtendSupport: readyToExtendSupport ?? null,
+          SupportFromHelpersForCareGivingChores:
+            SupportFromHelpersForCareGivingChores ?? null,
+          WillingnessToExpandHelpSystem: WillingnessToExpandHelpSystem ?? null,
           OtherCommitments: OtherCommitments ?? null,
+          AvailabilityOfHoursIdentifiedByInterviewer:
+            AvailabilityOfHoursIdentifiedByInterviewer ?? null,
           comment: comment ?? null,
         };
         const validationResponses = await Promise.all(
@@ -340,35 +385,37 @@ export default function QuestionUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               candidateName: value,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
@@ -384,6 +431,83 @@ export default function QuestionUpdateForm(props) {
         hasError={errors.candidateName?.hasError}
         {...getOverrideProps(overrides, "candidateName")}
       ></TextField>
+      <SelectField
+        label="Candidate age"
+        placeholder="Please select an option"
+        isDisabled={false}
+        value={candidateAge}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              candidateName,
+              candidateAge: value,
+              candidateId,
+              candidateLocation,
+              interviewer,
+              Location,
+              interviewerJobLocation,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
+              learningReadiness,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
+              lastWorked,
+              maritalStatus,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
+              extentOfCareGiving,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
+              OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
+              comment,
+            };
+            const result = onChange(modelFields);
+            value = result?.candidateAge ?? value;
+          }
+          if (errors.candidateAge?.hasError) {
+            runValidationTasks("candidateAge", value);
+          }
+          setCandidateAge(value);
+        }}
+        onBlur={() => runValidationTasks("candidateAge", candidateAge)}
+        errorMessage={errors.candidateAge?.errorMessage}
+        hasError={errors.candidateAge?.hasError}
+        {...getOverrideProps(overrides, "candidateAge")}
+      >
+        <option
+          children="Years 21 to 25"
+          value="Years_21_to_25"
+          {...getOverrideProps(overrides, "candidateAgeoption0")}
+        ></option>
+        <option
+          children="Years 25 to 30"
+          value="Years_25_to_30"
+          {...getOverrideProps(overrides, "candidateAgeoption1")}
+        ></option>
+        <option
+          children="Years 30 to 40"
+          value="Years_30_to_40"
+          {...getOverrideProps(overrides, "candidateAgeoption2")}
+        ></option>
+        <option
+          children="Years 40 and above"
+          value="Years_40_and_above"
+          {...getOverrideProps(overrides, "candidateAgeoption3")}
+        ></option>
+      </SelectField>
       <TextField
         label="Candidate id"
         isRequired={true}
@@ -394,35 +518,37 @@ export default function QuestionUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId: value,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
@@ -448,35 +574,37 @@ export default function QuestionUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation: value,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
@@ -504,35 +632,37 @@ export default function QuestionUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer: value,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
@@ -549,184 +679,61 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "interviewer")}
       ></TextField>
       <TextField
-        label="Interview date"
+        label="Location"
         isRequired={true}
         isReadOnly={false}
-        type="date"
-        value={interviewDate}
+        value={Location}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate: value,
-              jobLocation,
-              roles,
+              Location: value,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.interviewDate ?? value;
+            value = result?.Location ?? value;
           }
-          if (errors.interviewDate?.hasError) {
-            runValidationTasks("interviewDate", value);
+          if (errors.Location?.hasError) {
+            runValidationTasks("Location", value);
           }
-          setInterviewDate(value);
+          setLocation(value);
         }}
-        onBlur={() => runValidationTasks("interviewDate", interviewDate)}
-        errorMessage={errors.interviewDate?.errorMessage}
-        hasError={errors.interviewDate?.hasError}
-        {...getOverrideProps(overrides, "interviewDate")}
+        onBlur={() => runValidationTasks("Location", Location)}
+        errorMessage={errors.Location?.errorMessage}
+        hasError={errors.Location?.hasError}
+        {...getOverrideProps(overrides, "Location")}
       ></TextField>
-      <TextField
-        label="Job location"
-        isRequired={true}
-        isReadOnly={false}
-        value={jobLocation}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              candidateName,
-              candidateId,
-              candidateLocation,
-              interviewer,
-              interviewDate,
-              jobLocation: value,
-              roles,
-              interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
-              learningReadiness,
-              jobSearch,
-              jobSuccess,
-              lastWorked,
-              maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
-              extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
-              OtherCommitments,
-              comment,
-            };
-            const result = onChange(modelFields);
-            value = result?.jobLocation ?? value;
-          }
-          if (errors.jobLocation?.hasError) {
-            runValidationTasks("jobLocation", value);
-          }
-          setJobLocation(value);
-        }}
-        onBlur={() => runValidationTasks("jobLocation", jobLocation)}
-        errorMessage={errors.jobLocation?.errorMessage}
-        hasError={errors.jobLocation?.hasError}
-        {...getOverrideProps(overrides, "jobLocation")}
-      ></TextField>
-      <SelectField
-        label="Roles"
-        placeholder="Please select an option"
-        isDisabled={false}
-        value={roles}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              candidateName,
-              candidateId,
-              candidateLocation,
-              interviewer,
-              interviewDate,
-              jobLocation,
-              roles: value,
-              interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
-              learningReadiness,
-              jobSearch,
-              jobSuccess,
-              lastWorked,
-              maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
-              extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
-              OtherCommitments,
-              comment,
-            };
-            const result = onChange(modelFields);
-            value = result?.roles ?? value;
-          }
-          if (errors.roles?.hasError) {
-            runValidationTasks("roles", value);
-          }
-          setRoles(value);
-        }}
-        onBlur={() => runValidationTasks("roles", roles)}
-        errorMessage={errors.roles?.errorMessage}
-        hasError={errors.roles?.hasError}
-        {...getOverrideProps(overrides, "roles")}
-      >
-        <option
-          children="Team member"
-          value="Team_Member"
-          {...getOverrideProps(overrides, "rolesoption0")}
-        ></option>
-        <option
-          children="Team manager"
-          value="Team_Manager"
-          {...getOverrideProps(overrides, "rolesoption1")}
-        ></option>
-        <option
-          children="Individual contributor"
-          value="Individual_Contributor"
-          {...getOverrideProps(overrides, "rolesoption2")}
-        ></option>
-      </SelectField>
       <TextField
         label="Interviewer job location"
         isRequired={false}
@@ -737,35 +744,37 @@ export default function QuestionUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation: value,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
@@ -784,283 +793,451 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "interviewerJobLocation")}
       ></TextField>
       <SelectField
-        label="Type of contract"
+        label="Responsibilities and roles"
         placeholder="Please select an option"
         isDisabled={false}
-        value={typeOfContract}
+        value={ResponsibilitiesAndRoles}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract: value,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles: value,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.typeOfContract ?? value;
+            value = result?.ResponsibilitiesAndRoles ?? value;
           }
-          if (errors.typeOfContract?.hasError) {
-            runValidationTasks("typeOfContract", value);
+          if (errors.ResponsibilitiesAndRoles?.hasError) {
+            runValidationTasks("ResponsibilitiesAndRoles", value);
           }
-          setTypeOfContract(value);
+          setResponsibilitiesAndRoles(value);
         }}
-        onBlur={() => runValidationTasks("typeOfContract", typeOfContract)}
-        errorMessage={errors.typeOfContract?.errorMessage}
-        hasError={errors.typeOfContract?.hasError}
-        {...getOverrideProps(overrides, "typeOfContract")}
+        onBlur={() =>
+          runValidationTasks(
+            "ResponsibilitiesAndRoles",
+            ResponsibilitiesAndRoles
+          )
+        }
+        errorMessage={errors.ResponsibilitiesAndRoles?.errorMessage}
+        hasError={errors.ResponsibilitiesAndRoles?.hasError}
+        {...getOverrideProps(overrides, "ResponsibilitiesAndRoles")}
+      >
+        <option
+          children="Team member"
+          value="Team_Member"
+          {...getOverrideProps(overrides, "ResponsibilitiesAndRolesoption0")}
+        ></option>
+        <option
+          children="Team manager"
+          value="Team_Manager"
+          {...getOverrideProps(overrides, "ResponsibilitiesAndRolesoption1")}
+        ></option>
+        <option
+          children="Individual contributor"
+          value="Individual_Contributor"
+          {...getOverrideProps(overrides, "ResponsibilitiesAndRolesoption2")}
+        ></option>
+      </SelectField>
+      <SelectField
+        label="Type of role suitable for"
+        placeholder="Please select an option"
+        isDisabled={false}
+        value={TypeOfRoleSuitableFor}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              candidateName,
+              candidateAge,
+              candidateId,
+              candidateLocation,
+              interviewer,
+              Location,
+              interviewerJobLocation,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor: value,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
+              learningReadiness,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
+              lastWorked,
+              maritalStatus,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
+              extentOfCareGiving,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
+              OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
+              comment,
+            };
+            const result = onChange(modelFields);
+            value = result?.TypeOfRoleSuitableFor ?? value;
+          }
+          if (errors.TypeOfRoleSuitableFor?.hasError) {
+            runValidationTasks("TypeOfRoleSuitableFor", value);
+          }
+          setTypeOfRoleSuitableFor(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("TypeOfRoleSuitableFor", TypeOfRoleSuitableFor)
+        }
+        errorMessage={errors.TypeOfRoleSuitableFor?.errorMessage}
+        hasError={errors.TypeOfRoleSuitableFor?.hasError}
+        {...getOverrideProps(overrides, "TypeOfRoleSuitableFor")}
       >
         <option
           children="Short term"
           value="short_term"
-          {...getOverrideProps(overrides, "typeOfContractoption0")}
+          {...getOverrideProps(overrides, "TypeOfRoleSuitableForoption0")}
         ></option>
         <option
           children="Long term"
           value="long_term"
-          {...getOverrideProps(overrides, "typeOfContractoption1")}
+          {...getOverrideProps(overrides, "TypeOfRoleSuitableForoption1")}
         ></option>
       </SelectField>
       <SelectField
-        label="Drive to work"
+        label="Type of contract suggested"
         placeholder="Please select an option"
         isDisabled={false}
-        value={driveToWork}
+        value={typeOfContractSuggested}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork: value,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested: value,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.driveToWork ?? value;
+            value = result?.typeOfContractSuggested ?? value;
           }
-          if (errors.driveToWork?.hasError) {
-            runValidationTasks("driveToWork", value);
+          if (errors.typeOfContractSuggested?.hasError) {
+            runValidationTasks("typeOfContractSuggested", value);
           }
-          setDriveToWork(value);
+          setTypeOfContractSuggested(value);
         }}
-        onBlur={() => runValidationTasks("driveToWork", driveToWork)}
-        errorMessage={errors.driveToWork?.errorMessage}
-        hasError={errors.driveToWork?.hasError}
-        {...getOverrideProps(overrides, "driveToWork")}
+        onBlur={() =>
+          runValidationTasks("typeOfContractSuggested", typeOfContractSuggested)
+        }
+        errorMessage={errors.typeOfContractSuggested?.errorMessage}
+        hasError={errors.typeOfContractSuggested?.hasError}
+        {...getOverrideProps(overrides, "typeOfContractSuggested")}
+      >
+        <option
+          children="Short term"
+          value="short_term"
+          {...getOverrideProps(overrides, "typeOfContractSuggestedoption0")}
+        ></option>
+        <option
+          children="Long term"
+          value="long_term"
+          {...getOverrideProps(overrides, "typeOfContractSuggestedoption1")}
+        ></option>
+      </SelectField>
+      <SelectField
+        label="Drive to work or intent to work"
+        placeholder="Please select an option"
+        isDisabled={false}
+        value={DriveToWorkOrIntentToWork}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              candidateName,
+              candidateAge,
+              candidateId,
+              candidateLocation,
+              interviewer,
+              Location,
+              interviewerJobLocation,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork: value,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
+              learningReadiness,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
+              lastWorked,
+              maritalStatus,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
+              extentOfCareGiving,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
+              OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
+              comment,
+            };
+            const result = onChange(modelFields);
+            value = result?.DriveToWorkOrIntentToWork ?? value;
+          }
+          if (errors.DriveToWorkOrIntentToWork?.hasError) {
+            runValidationTasks("DriveToWorkOrIntentToWork", value);
+          }
+          setDriveToWorkOrIntentToWork(value);
+        }}
+        onBlur={() =>
+          runValidationTasks(
+            "DriveToWorkOrIntentToWork",
+            DriveToWorkOrIntentToWork
+          )
+        }
+        errorMessage={errors.DriveToWorkOrIntentToWork?.errorMessage}
+        hasError={errors.DriveToWorkOrIntentToWork?.hasError}
+        {...getOverrideProps(overrides, "DriveToWorkOrIntentToWork")}
       >
         <option
           children="Very high"
           value="very_high"
-          {...getOverrideProps(overrides, "driveToWorkoption0")}
+          {...getOverrideProps(overrides, "DriveToWorkOrIntentToWorkoption0")}
         ></option>
         <option
           children="High"
           value="high"
-          {...getOverrideProps(overrides, "driveToWorkoption1")}
+          {...getOverrideProps(overrides, "DriveToWorkOrIntentToWorkoption1")}
         ></option>
         <option
           children="Low"
           value="low"
-          {...getOverrideProps(overrides, "driveToWorkoption2")}
+          {...getOverrideProps(overrides, "DriveToWorkOrIntentToWorkoption2")}
         ></option>
       </SelectField>
       <SelectField
-        label="Career ambition"
+        label="Immediate career ambitions"
         placeholder="Please select an option"
         isDisabled={false}
-        value={careerAmbition}
+        value={ImmediateCareerAmbitions}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition: value,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions: value,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.careerAmbition ?? value;
+            value = result?.ImmediateCareerAmbitions ?? value;
           }
-          if (errors.careerAmbition?.hasError) {
-            runValidationTasks("careerAmbition", value);
+          if (errors.ImmediateCareerAmbitions?.hasError) {
+            runValidationTasks("ImmediateCareerAmbitions", value);
           }
-          setCareerAmbition(value);
+          setImmediateCareerAmbitions(value);
         }}
-        onBlur={() => runValidationTasks("careerAmbition", careerAmbition)}
-        errorMessage={errors.careerAmbition?.errorMessage}
-        hasError={errors.careerAmbition?.hasError}
-        {...getOverrideProps(overrides, "careerAmbition")}
+        onBlur={() =>
+          runValidationTasks(
+            "ImmediateCareerAmbitions",
+            ImmediateCareerAmbitions
+          )
+        }
+        errorMessage={errors.ImmediateCareerAmbitions?.errorMessage}
+        hasError={errors.ImmediateCareerAmbitions?.hasError}
+        {...getOverrideProps(overrides, "ImmediateCareerAmbitions")}
       >
         <option
           children="Wfh flexibility"
           value="WFH_Flexibility"
-          {...getOverrideProps(overrides, "careerAmbitionoption0")}
+          {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption0")}
         ></option>
         <option
           children="Long term job"
           value="Long_term_job"
-          {...getOverrideProps(overrides, "careerAmbitionoption1")}
+          {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption1")}
         ></option>
         <option
           children="Utilize free time"
           value="Utilize_free_Time"
-          {...getOverrideProps(overrides, "careerAmbitionoption2")}
+          {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption2")}
         ></option>
         <option
           children="Restart work after break"
           value="Restart_work_after_break"
-          {...getOverrideProps(overrides, "careerAmbitionoption3")}
+          {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption3")}
         ></option>
       </SelectField>
       <SelectField
-        label="Financial drive"
+        label="Financial drive to work"
         placeholder="Please select an option"
         isDisabled={false}
-        value={financialDrive}
+        value={financialDriveToWork}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive: value,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork: value,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.financialDrive ?? value;
+            value = result?.financialDriveToWork ?? value;
           }
-          if (errors.financialDrive?.hasError) {
-            runValidationTasks("financialDrive", value);
+          if (errors.financialDriveToWork?.hasError) {
+            runValidationTasks("financialDriveToWork", value);
           }
-          setFinancialDrive(value);
+          setFinancialDriveToWork(value);
         }}
-        onBlur={() => runValidationTasks("financialDrive", financialDrive)}
-        errorMessage={errors.financialDrive?.errorMessage}
-        hasError={errors.financialDrive?.hasError}
-        {...getOverrideProps(overrides, "financialDrive")}
+        onBlur={() =>
+          runValidationTasks("financialDriveToWork", financialDriveToWork)
+        }
+        errorMessage={errors.financialDriveToWork?.errorMessage}
+        hasError={errors.financialDriveToWork?.hasError}
+        {...getOverrideProps(overrides, "financialDriveToWork")}
       >
         <option
           children="Spend on self"
           value="spend_on_self"
-          {...getOverrideProps(overrides, "financialDriveoption0")}
+          {...getOverrideProps(overrides, "financialDriveToWorkoption0")}
         ></option>
         <option
           children="Contribute household minor"
           value="Contribute_household_minor"
-          {...getOverrideProps(overrides, "financialDriveoption1")}
+          {...getOverrideProps(overrides, "financialDriveToWorkoption1")}
         ></option>
         <option
           children="Contribute household major"
           value="Contribute_household_major"
-          {...getOverrideProps(overrides, "financialDriveoption2")}
+          {...getOverrideProps(overrides, "financialDriveToWorkoption2")}
         ></option>
       </SelectField>
       <SelectField
@@ -1073,35 +1250,37 @@ export default function QuestionUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness: value,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
@@ -1131,138 +1310,155 @@ export default function QuestionUpdateForm(props) {
         ></option>
       </SelectField>
       <SelectField
-        label="Job search"
+        label="Job search and readiness"
         placeholder="Please select an option"
         isDisabled={false}
-        value={jobSearch}
+        value={JobSearchAndReadiness}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch: value,
-              jobSuccess,
+              JobSearchAndReadiness: value,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.jobSearch ?? value;
+            value = result?.JobSearchAndReadiness ?? value;
           }
-          if (errors.jobSearch?.hasError) {
-            runValidationTasks("jobSearch", value);
+          if (errors.JobSearchAndReadiness?.hasError) {
+            runValidationTasks("JobSearchAndReadiness", value);
           }
-          setJobSearch(value);
+          setJobSearchAndReadiness(value);
         }}
-        onBlur={() => runValidationTasks("jobSearch", jobSearch)}
-        errorMessage={errors.jobSearch?.errorMessage}
-        hasError={errors.jobSearch?.hasError}
-        {...getOverrideProps(overrides, "jobSearch")}
+        onBlur={() =>
+          runValidationTasks("JobSearchAndReadiness", JobSearchAndReadiness)
+        }
+        errorMessage={errors.JobSearchAndReadiness?.errorMessage}
+        hasError={errors.JobSearchAndReadiness?.hasError}
+        {...getOverrideProps(overrides, "JobSearchAndReadiness")}
       >
         <option
           children="Looking very actively"
           value="Looking_Very_actively"
-          {...getOverrideProps(overrides, "jobSearchoption0")}
+          {...getOverrideProps(overrides, "JobSearchAndReadinessoption0")}
         ></option>
         <option
           children="Moderately active"
           value="Moderately_active"
-          {...getOverrideProps(overrides, "jobSearchoption1")}
+          {...getOverrideProps(overrides, "JobSearchAndReadinessoption1")}
         ></option>
         <option
           children="Job search inactive"
           value="Job_search_Inactive"
-          {...getOverrideProps(overrides, "jobSearchoption2")}
+          {...getOverrideProps(overrides, "JobSearchAndReadinessoption2")}
         ></option>
       </SelectField>
       <SelectField
-        label="Job success"
+        label="Job search success for short term jobs"
         placeholder="Please select an option"
         isDisabled={false}
-        value={jobSuccess}
+        value={JobSearchSuccessForShortTermJobs}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess: value,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs: value,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.jobSuccess ?? value;
+            value = result?.JobSearchSuccessForShortTermJobs ?? value;
           }
-          if (errors.jobSuccess?.hasError) {
-            runValidationTasks("jobSuccess", value);
+          if (errors.JobSearchSuccessForShortTermJobs?.hasError) {
+            runValidationTasks("JobSearchSuccessForShortTermJobs", value);
           }
-          setJobSuccess(value);
+          setJobSearchSuccessForShortTermJobs(value);
         }}
-        onBlur={() => runValidationTasks("jobSuccess", jobSuccess)}
-        errorMessage={errors.jobSuccess?.errorMessage}
-        hasError={errors.jobSuccess?.hasError}
-        {...getOverrideProps(overrides, "jobSuccess")}
+        onBlur={() =>
+          runValidationTasks(
+            "JobSearchSuccessForShortTermJobs",
+            JobSearchSuccessForShortTermJobs
+          )
+        }
+        errorMessage={errors.JobSearchSuccessForShortTermJobs?.errorMessage}
+        hasError={errors.JobSearchSuccessForShortTermJobs?.hasError}
+        {...getOverrideProps(overrides, "JobSearchSuccessForShortTermJobs")}
       >
         <option
           children="Not many callback"
           value="Not_Many_callback"
-          {...getOverrideProps(overrides, "jobSuccessoption0")}
+          {...getOverrideProps(
+            overrides,
+            "JobSearchSuccessForShortTermJobsoption0"
+          )}
         ></option>
         <option
           children="Received callback"
           value="Received_callback"
-          {...getOverrideProps(overrides, "jobSuccessoption1")}
+          {...getOverrideProps(
+            overrides,
+            "JobSearchSuccessForShortTermJobsoption1"
+          )}
         ></option>
       </SelectField>
       <SelectField
@@ -1275,35 +1471,37 @@ export default function QuestionUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked: value,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
@@ -1320,18 +1518,18 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "lastWorked")}
       >
         <option
-          children="Yrs 0 2"
-          value="Yrs_0_2"
+          children="Yrs 0 to 2"
+          value="Yrs_0__to_2"
           {...getOverrideProps(overrides, "lastWorkedoption0")}
         ></option>
         <option
-          children="Yrs more 5"
-          value="Yrs_More_5"
+          children="Yrs more than 5"
+          value="Yrs_More__than_5"
           {...getOverrideProps(overrides, "lastWorkedoption1")}
         ></option>
         <option
-          children="Yrs 2 5"
-          value="Yrs_2_5"
+          children="Yrs 2 to 5"
+          value="Yrs_2_to_5"
           {...getOverrideProps(overrides, "lastWorkedoption2")}
         ></option>
       </SelectField>
@@ -1345,35 +1543,37 @@ export default function QuestionUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus: value,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
@@ -1406,680 +1606,782 @@ export default function QuestionUpdateForm(props) {
         ></option>
       </SelectField>
       <SelectField
-        label="Single type"
+        label="Single"
         placeholder="Please select an option"
         isDisabled={false}
-        value={singleType}
+        value={Single}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType: value,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single: value,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.singleType ?? value;
+            value = result?.Single ?? value;
           }
-          if (errors.singleType?.hasError) {
-            runValidationTasks("singleType", value);
+          if (errors.Single?.hasError) {
+            runValidationTasks("Single", value);
           }
-          setSingleType(value);
+          setSingle(value);
         }}
-        onBlur={() => runValidationTasks("singleType", singleType)}
-        errorMessage={errors.singleType?.errorMessage}
-        hasError={errors.singleType?.hasError}
-        {...getOverrideProps(overrides, "singleType")}
+        onBlur={() => runValidationTasks("Single", Single)}
+        errorMessage={errors.Single?.errorMessage}
+        hasError={errors.Single?.hasError}
+        {...getOverrideProps(overrides, "Single")}
       >
         <option
           children="Not applicable"
           value="Not_Applicable"
-          {...getOverrideProps(overrides, "singleTypeoption0")}
+          {...getOverrideProps(overrides, "Singleoption0")}
         ></option>
         <option
           children="Un married"
           value="UnMarried"
-          {...getOverrideProps(overrides, "singleTypeoption1")}
+          {...getOverrideProps(overrides, "Singleoption1")}
         ></option>
         <option
           children="Separated divorced"
           value="Separated_Divorced"
-          {...getOverrideProps(overrides, "singleTypeoption2")}
+          {...getOverrideProps(overrides, "Singleoption2")}
         ></option>
       </SelectField>
       <SelectField
-        label="Kids age"
+        label="Age of youngest kid"
         placeholder="Please select an option"
         isDisabled={false}
-        value={kidsAge}
+        value={AgeOfYoungestKid}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge: value,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid: value,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.kidsAge ?? value;
+            value = result?.AgeOfYoungestKid ?? value;
           }
-          if (errors.kidsAge?.hasError) {
-            runValidationTasks("kidsAge", value);
+          if (errors.AgeOfYoungestKid?.hasError) {
+            runValidationTasks("AgeOfYoungestKid", value);
           }
-          setKidsAge(value);
+          setAgeOfYoungestKid(value);
         }}
-        onBlur={() => runValidationTasks("kidsAge", kidsAge)}
-        errorMessage={errors.kidsAge?.errorMessage}
-        hasError={errors.kidsAge?.hasError}
-        {...getOverrideProps(overrides, "kidsAge")}
+        onBlur={() => runValidationTasks("AgeOfYoungestKid", AgeOfYoungestKid)}
+        errorMessage={errors.AgeOfYoungestKid?.errorMessage}
+        hasError={errors.AgeOfYoungestKid?.hasError}
+        {...getOverrideProps(overrides, "AgeOfYoungestKid")}
       >
         <option
           children="No kids"
           value="No_kids"
-          {...getOverrideProps(overrides, "kidsAgeoption0")}
+          {...getOverrideProps(overrides, "AgeOfYoungestKidoption0")}
         ></option>
         <option
-          children="Yrs 0 5"
-          value="Yrs_0_5"
-          {...getOverrideProps(overrides, "kidsAgeoption1")}
+          children="Yrs 0 to 5"
+          value="Yrs_0_to_5"
+          {...getOverrideProps(overrides, "AgeOfYoungestKidoption1")}
         ></option>
         <option
-          children="Yrs 5 12"
-          value="Yrs_5_12"
-          {...getOverrideProps(overrides, "kidsAgeoption2")}
+          children="Yrs 5 to 12"
+          value="Yrs_5_to_12"
+          {...getOverrideProps(overrides, "AgeOfYoungestKidoption2")}
         ></option>
         <option
-          children="Yrs 12 16"
-          value="Yrs_12_16"
-          {...getOverrideProps(overrides, "kidsAgeoption3")}
+          children="Yrs 12 to 16"
+          value="Yrs_12_to_16"
+          {...getOverrideProps(overrides, "AgeOfYoungestKidoption3")}
         ></option>
         <option
-          children="Yrs 16 plus"
-          value="Yrs_16_plus"
-          {...getOverrideProps(overrides, "kidsAgeoption4")}
+          children="Yrs 16 to plus"
+          value="Yrs_16_to_plus"
+          {...getOverrideProps(overrides, "AgeOfYoungestKidoption4")}
         ></option>
       </SelectField>
       <SelectField
-        label="Spouse support kids"
+        label="Support from spouse for kids"
         placeholder="Please select an option"
         isDisabled={false}
-        value={spouseSupportKids}
+        value={SupportFromSpouseForKids}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids: value,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids: value,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.spouseSupportKids ?? value;
+            value = result?.SupportFromSpouseForKids ?? value;
           }
-          if (errors.spouseSupportKids?.hasError) {
-            runValidationTasks("spouseSupportKids", value);
+          if (errors.SupportFromSpouseForKids?.hasError) {
+            runValidationTasks("SupportFromSpouseForKids", value);
           }
-          setSpouseSupportKids(value);
+          setSupportFromSpouseForKids(value);
         }}
         onBlur={() =>
-          runValidationTasks("spouseSupportKids", spouseSupportKids)
+          runValidationTasks(
+            "SupportFromSpouseForKids",
+            SupportFromSpouseForKids
+          )
         }
-        errorMessage={errors.spouseSupportKids?.errorMessage}
-        hasError={errors.spouseSupportKids?.hasError}
-        {...getOverrideProps(overrides, "spouseSupportKids")}
+        errorMessage={errors.SupportFromSpouseForKids?.errorMessage}
+        hasError={errors.SupportFromSpouseForKids?.hasError}
+        {...getOverrideProps(overrides, "SupportFromSpouseForKids")}
       >
         <option
           children="Not applicable"
           value="Not_Applicable"
-          {...getOverrideProps(overrides, "spouseSupportKidsoption0")}
+          {...getOverrideProps(overrides, "SupportFromSpouseForKidsoption0")}
         ></option>
         <option
           children="Weak"
           value="Weak"
-          {...getOverrideProps(overrides, "spouseSupportKidsoption1")}
+          {...getOverrideProps(overrides, "SupportFromSpouseForKidsoption1")}
         ></option>
         <option
           children="Medium"
           value="Medium"
-          {...getOverrideProps(overrides, "spouseSupportKidsoption2")}
+          {...getOverrideProps(overrides, "SupportFromSpouseForKidsoption2")}
         ></option>
         <option
           children="Strong"
           value="Strong"
-          {...getOverrideProps(overrides, "spouseSupportKidsoption3")}
+          {...getOverrideProps(overrides, "SupportFromSpouseForKidsoption3")}
         ></option>
       </SelectField>
       <SelectField
-        label="Helper support kids"
+        label="Support from spouse for household chores"
         placeholder="Please select an option"
         isDisabled={false}
-        value={helperSupportKids}
+        value={SupportFromSpouseForHouseholdChores}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids: value,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores: value,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.helperSupportKids ?? value;
+            value = result?.SupportFromSpouseForHouseholdChores ?? value;
           }
-          if (errors.helperSupportKids?.hasError) {
-            runValidationTasks("helperSupportKids", value);
+          if (errors.SupportFromSpouseForHouseholdChores?.hasError) {
+            runValidationTasks("SupportFromSpouseForHouseholdChores", value);
           }
-          setHelperSupportKids(value);
+          setSupportFromSpouseForHouseholdChores(value);
         }}
         onBlur={() =>
-          runValidationTasks("helperSupportKids", helperSupportKids)
+          runValidationTasks(
+            "SupportFromSpouseForHouseholdChores",
+            SupportFromSpouseForHouseholdChores
+          )
         }
-        errorMessage={errors.helperSupportKids?.errorMessage}
-        hasError={errors.helperSupportKids?.hasError}
-        {...getOverrideProps(overrides, "helperSupportKids")}
+        errorMessage={errors.SupportFromSpouseForHouseholdChores?.errorMessage}
+        hasError={errors.SupportFromSpouseForHouseholdChores?.hasError}
+        {...getOverrideProps(overrides, "SupportFromSpouseForHouseholdChores")}
       >
         <option
           children="Not applicable"
           value="Not_Applicable"
-          {...getOverrideProps(overrides, "helperSupportKidsoption0")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromSpouseForHouseholdChoresoption0"
+          )}
         ></option>
         <option
           children="Weak"
           value="Weak"
-          {...getOverrideProps(overrides, "helperSupportKidsoption1")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromSpouseForHouseholdChoresoption1"
+          )}
         ></option>
         <option
           children="Medium"
           value="Medium"
-          {...getOverrideProps(overrides, "helperSupportKidsoption2")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromSpouseForHouseholdChoresoption2"
+          )}
         ></option>
         <option
           children="Strong"
           value="Strong"
-          {...getOverrideProps(overrides, "helperSupportKidsoption3")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromSpouseForHouseholdChoresoption3"
+          )}
         ></option>
       </SelectField>
       <SelectField
-        label="Family support kids"
+        label="Support from helpers for kids"
         placeholder="Please select an option"
         isDisabled={false}
-        value={familySupportKids}
+        value={SupportFromHelpersForKids}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids: value,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids: value,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.familySupportKids ?? value;
+            value = result?.SupportFromHelpersForKids ?? value;
           }
-          if (errors.familySupportKids?.hasError) {
-            runValidationTasks("familySupportKids", value);
+          if (errors.SupportFromHelpersForKids?.hasError) {
+            runValidationTasks("SupportFromHelpersForKids", value);
           }
-          setFamilySupportKids(value);
+          setSupportFromHelpersForKids(value);
         }}
         onBlur={() =>
-          runValidationTasks("familySupportKids", familySupportKids)
+          runValidationTasks(
+            "SupportFromHelpersForKids",
+            SupportFromHelpersForKids
+          )
         }
-        errorMessage={errors.familySupportKids?.errorMessage}
-        hasError={errors.familySupportKids?.hasError}
-        {...getOverrideProps(overrides, "familySupportKids")}
+        errorMessage={errors.SupportFromHelpersForKids?.errorMessage}
+        hasError={errors.SupportFromHelpersForKids?.hasError}
+        {...getOverrideProps(overrides, "SupportFromHelpersForKids")}
       >
         <option
           children="Not applicable"
           value="Not_Applicable"
-          {...getOverrideProps(overrides, "familySupportKidsoption0")}
+          {...getOverrideProps(overrides, "SupportFromHelpersForKidsoption0")}
         ></option>
         <option
           children="Weak"
           value="Weak"
-          {...getOverrideProps(overrides, "familySupportKidsoption1")}
+          {...getOverrideProps(overrides, "SupportFromHelpersForKidsoption1")}
         ></option>
         <option
           children="Medium"
           value="Medium"
-          {...getOverrideProps(overrides, "familySupportKidsoption2")}
+          {...getOverrideProps(overrides, "SupportFromHelpersForKidsoption2")}
         ></option>
         <option
           children="Strong"
           value="Strong"
-          {...getOverrideProps(overrides, "familySupportKidsoption3")}
+          {...getOverrideProps(overrides, "SupportFromHelpersForKidsoption3")}
         ></option>
       </SelectField>
       <SelectField
-        label="Spouse support household"
+        label="Support from helpers for household chores"
         placeholder="Please select an option"
         isDisabled={false}
-        value={spouseSupportHousehold}
+        value={SupportFromHelpersForHouseholdChores}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold: value,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores: value,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.spouseSupportHousehold ?? value;
+            value = result?.SupportFromHelpersForHouseholdChores ?? value;
           }
-          if (errors.spouseSupportHousehold?.hasError) {
-            runValidationTasks("spouseSupportHousehold", value);
+          if (errors.SupportFromHelpersForHouseholdChores?.hasError) {
+            runValidationTasks("SupportFromHelpersForHouseholdChores", value);
           }
-          setSpouseSupportHousehold(value);
+          setSupportFromHelpersForHouseholdChores(value);
         }}
         onBlur={() =>
-          runValidationTasks("spouseSupportHousehold", spouseSupportHousehold)
+          runValidationTasks(
+            "SupportFromHelpersForHouseholdChores",
+            SupportFromHelpersForHouseholdChores
+          )
         }
-        errorMessage={errors.spouseSupportHousehold?.errorMessage}
-        hasError={errors.spouseSupportHousehold?.hasError}
-        {...getOverrideProps(overrides, "spouseSupportHousehold")}
+        errorMessage={errors.SupportFromHelpersForHouseholdChores?.errorMessage}
+        hasError={errors.SupportFromHelpersForHouseholdChores?.hasError}
+        {...getOverrideProps(overrides, "SupportFromHelpersForHouseholdChores")}
       >
         <option
           children="Not applicable"
           value="Not_Applicable"
-          {...getOverrideProps(overrides, "spouseSupportHouseholdoption0")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromHelpersForHouseholdChoresoption0"
+          )}
         ></option>
         <option
           children="Weak"
           value="Weak"
-          {...getOverrideProps(overrides, "spouseSupportHouseholdoption1")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromHelpersForHouseholdChoresoption1"
+          )}
         ></option>
         <option
           children="Medium"
           value="Medium"
-          {...getOverrideProps(overrides, "spouseSupportHouseholdoption2")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromHelpersForHouseholdChoresoption2"
+          )}
         ></option>
         <option
           children="Strong"
           value="Strong"
-          {...getOverrideProps(overrides, "spouseSupportHouseholdoption3")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromHelpersForHouseholdChoresoption3"
+          )}
         ></option>
       </SelectField>
       <SelectField
-        label="Helper support household"
+        label="Support from other family members for kids"
         placeholder="Please select an option"
         isDisabled={false}
-        value={helperSupportHousehold}
+        value={SupportFromOtherFamilyMembersForKids}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold: value,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids: value,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.helperSupportHousehold ?? value;
+            value = result?.SupportFromOtherFamilyMembersForKids ?? value;
           }
-          if (errors.helperSupportHousehold?.hasError) {
-            runValidationTasks("helperSupportHousehold", value);
+          if (errors.SupportFromOtherFamilyMembersForKids?.hasError) {
+            runValidationTasks("SupportFromOtherFamilyMembersForKids", value);
           }
-          setHelperSupportHousehold(value);
+          setSupportFromOtherFamilyMembersForKids(value);
         }}
         onBlur={() =>
-          runValidationTasks("helperSupportHousehold", helperSupportHousehold)
+          runValidationTasks(
+            "SupportFromOtherFamilyMembersForKids",
+            SupportFromOtherFamilyMembersForKids
+          )
         }
-        errorMessage={errors.helperSupportHousehold?.errorMessage}
-        hasError={errors.helperSupportHousehold?.hasError}
-        {...getOverrideProps(overrides, "helperSupportHousehold")}
+        errorMessage={errors.SupportFromOtherFamilyMembersForKids?.errorMessage}
+        hasError={errors.SupportFromOtherFamilyMembersForKids?.hasError}
+        {...getOverrideProps(overrides, "SupportFromOtherFamilyMembersForKids")}
       >
         <option
           children="Not applicable"
           value="Not_Applicable"
-          {...getOverrideProps(overrides, "helperSupportHouseholdoption0")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromOtherFamilyMembersForKidsoption0"
+          )}
         ></option>
         <option
           children="Weak"
           value="Weak"
-          {...getOverrideProps(overrides, "helperSupportHouseholdoption1")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromOtherFamilyMembersForKidsoption1"
+          )}
         ></option>
         <option
           children="Medium"
           value="Medium"
-          {...getOverrideProps(overrides, "helperSupportHouseholdoption2")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromOtherFamilyMembersForKidsoption2"
+          )}
         ></option>
         <option
           children="Strong"
           value="Strong"
-          {...getOverrideProps(overrides, "helperSupportHouseholdoption3")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromOtherFamilyMembersForKidsoption3"
+          )}
         ></option>
       </SelectField>
       <SelectField
-        label="Family support household"
+        label="Support from other family members for household chores"
         placeholder="Please select an option"
         isDisabled={false}
-        value={familySupportHousehold}
+        value={SupportFromOtherFamilyMembersForHouseholdChores}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold: value,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores: value,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.familySupportHousehold ?? value;
+            value =
+              result?.SupportFromOtherFamilyMembersForHouseholdChores ?? value;
           }
-          if (errors.familySupportHousehold?.hasError) {
-            runValidationTasks("familySupportHousehold", value);
+          if (
+            errors.SupportFromOtherFamilyMembersForHouseholdChores?.hasError
+          ) {
+            runValidationTasks(
+              "SupportFromOtherFamilyMembersForHouseholdChores",
+              value
+            );
           }
-          setFamilySupportHousehold(value);
+          setSupportFromOtherFamilyMembersForHouseholdChores(value);
         }}
         onBlur={() =>
-          runValidationTasks("familySupportHousehold", familySupportHousehold)
+          runValidationTasks(
+            "SupportFromOtherFamilyMembersForHouseholdChores",
+            SupportFromOtherFamilyMembersForHouseholdChores
+          )
         }
-        errorMessage={errors.familySupportHousehold?.errorMessage}
-        hasError={errors.familySupportHousehold?.hasError}
-        {...getOverrideProps(overrides, "familySupportHousehold")}
+        errorMessage={
+          errors.SupportFromOtherFamilyMembersForHouseholdChores?.errorMessage
+        }
+        hasError={
+          errors.SupportFromOtherFamilyMembersForHouseholdChores?.hasError
+        }
+        {...getOverrideProps(
+          overrides,
+          "SupportFromOtherFamilyMembersForHouseholdChores"
+        )}
       >
         <option
           children="Not applicable"
           value="Not_Applicable"
-          {...getOverrideProps(overrides, "familySupportHouseholdoption0")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromOtherFamilyMembersForHouseholdChoresoption0"
+          )}
         ></option>
         <option
           children="Weak"
           value="Weak"
-          {...getOverrideProps(overrides, "familySupportHouseholdoption1")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromOtherFamilyMembersForHouseholdChoresoption1"
+          )}
         ></option>
         <option
           children="Medium"
           value="Medium"
-          {...getOverrideProps(overrides, "familySupportHouseholdoption2")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromOtherFamilyMembersForHouseholdChoresoption2"
+          )}
         ></option>
         <option
           children="Strong"
           value="Strong"
-          {...getOverrideProps(overrides, "familySupportHouseholdoption3")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromOtherFamilyMembersForHouseholdChoresoption3"
+          )}
         ></option>
       </SelectField>
       <SelectField
-        label="Care giving"
+        label="Care giving responsibilities"
         placeholder="Please select an option"
         isDisabled={false}
-        value={careGiving}
+        value={careGivingResponsibilities}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving: value,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities: value,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.careGiving ?? value;
+            value = result?.careGivingResponsibilities ?? value;
           }
-          if (errors.careGiving?.hasError) {
-            runValidationTasks("careGiving", value);
+          if (errors.careGivingResponsibilities?.hasError) {
+            runValidationTasks("careGivingResponsibilities", value);
           }
-          setCareGiving(value);
+          setCareGivingResponsibilities(value);
         }}
-        onBlur={() => runValidationTasks("careGiving", careGiving)}
-        errorMessage={errors.careGiving?.errorMessage}
-        hasError={errors.careGiving?.hasError}
-        {...getOverrideProps(overrides, "careGiving")}
+        onBlur={() =>
+          runValidationTasks(
+            "careGivingResponsibilities",
+            careGivingResponsibilities
+          )
+        }
+        errorMessage={errors.careGivingResponsibilities?.errorMessage}
+        hasError={errors.careGivingResponsibilities?.hasError}
+        {...getOverrideProps(overrides, "careGivingResponsibilities")}
       >
         <option
           children="Yes"
           value="YES"
-          {...getOverrideProps(overrides, "careGivingoption0")}
+          {...getOverrideProps(overrides, "careGivingResponsibilitiesoption0")}
         ></option>
         <option
           children="No"
           value="No"
-          {...getOverrideProps(overrides, "careGivingoption1")}
+          {...getOverrideProps(overrides, "careGivingResponsibilitiesoption1")}
         ></option>
       </SelectField>
       <SelectField
@@ -2092,35 +2394,37 @@ export default function QuestionUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving: value,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
@@ -2160,157 +2464,196 @@ export default function QuestionUpdateForm(props) {
         ></option>
       </SelectField>
       <SelectField
-        label="Helper support care giving"
+        label="Support from helpers for care giving chores"
         placeholder="Please select an option"
         isDisabled={false}
-        value={helperSupportCareGiving}
+        value={SupportFromHelpersForCareGivingChores}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving: value,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores: value,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.helperSupportCareGiving ?? value;
+            value = result?.SupportFromHelpersForCareGivingChores ?? value;
           }
-          if (errors.helperSupportCareGiving?.hasError) {
-            runValidationTasks("helperSupportCareGiving", value);
+          if (errors.SupportFromHelpersForCareGivingChores?.hasError) {
+            runValidationTasks("SupportFromHelpersForCareGivingChores", value);
           }
-          setHelperSupportCareGiving(value);
+          setSupportFromHelpersForCareGivingChores(value);
         }}
         onBlur={() =>
-          runValidationTasks("helperSupportCareGiving", helperSupportCareGiving)
+          runValidationTasks(
+            "SupportFromHelpersForCareGivingChores",
+            SupportFromHelpersForCareGivingChores
+          )
         }
-        errorMessage={errors.helperSupportCareGiving?.errorMessage}
-        hasError={errors.helperSupportCareGiving?.hasError}
-        {...getOverrideProps(overrides, "helperSupportCareGiving")}
+        errorMessage={
+          errors.SupportFromHelpersForCareGivingChores?.errorMessage
+        }
+        hasError={errors.SupportFromHelpersForCareGivingChores?.hasError}
+        {...getOverrideProps(
+          overrides,
+          "SupportFromHelpersForCareGivingChores"
+        )}
       >
         <option
           children="Not applicable"
           value="Not_Applicable"
-          {...getOverrideProps(overrides, "helperSupportCareGivingoption0")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromHelpersForCareGivingChoresoption0"
+          )}
         ></option>
         <option
           children="Weak"
           value="Weak"
-          {...getOverrideProps(overrides, "helperSupportCareGivingoption1")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromHelpersForCareGivingChoresoption1"
+          )}
         ></option>
         <option
           children="Medium"
           value="Medium"
-          {...getOverrideProps(overrides, "helperSupportCareGivingoption2")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromHelpersForCareGivingChoresoption2"
+          )}
         ></option>
         <option
           children="Strong"
           value="Strong"
-          {...getOverrideProps(overrides, "helperSupportCareGivingoption3")}
+          {...getOverrideProps(
+            overrides,
+            "SupportFromHelpersForCareGivingChoresoption3"
+          )}
         ></option>
       </SelectField>
       <SelectField
-        label="Ready to extend support"
+        label="Willingness to expand help system"
         placeholder="Please select an option"
         isDisabled={false}
-        value={readyToExtendSupport}
+        value={WillingnessToExpandHelpSystem}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport: value,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem: value,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
-            value = result?.readyToExtendSupport ?? value;
+            value = result?.WillingnessToExpandHelpSystem ?? value;
           }
-          if (errors.readyToExtendSupport?.hasError) {
-            runValidationTasks("readyToExtendSupport", value);
+          if (errors.WillingnessToExpandHelpSystem?.hasError) {
+            runValidationTasks("WillingnessToExpandHelpSystem", value);
           }
-          setReadyToExtendSupport(value);
+          setWillingnessToExpandHelpSystem(value);
         }}
         onBlur={() =>
-          runValidationTasks("readyToExtendSupport", readyToExtendSupport)
+          runValidationTasks(
+            "WillingnessToExpandHelpSystem",
+            WillingnessToExpandHelpSystem
+          )
         }
-        errorMessage={errors.readyToExtendSupport?.errorMessage}
-        hasError={errors.readyToExtendSupport?.hasError}
-        {...getOverrideProps(overrides, "readyToExtendSupport")}
+        errorMessage={errors.WillingnessToExpandHelpSystem?.errorMessage}
+        hasError={errors.WillingnessToExpandHelpSystem?.hasError}
+        {...getOverrideProps(overrides, "WillingnessToExpandHelpSystem")}
       >
         <option
           children="Not applicable"
           value="Not_Applicable"
-          {...getOverrideProps(overrides, "readyToExtendSupportoption0")}
+          {...getOverrideProps(
+            overrides,
+            "WillingnessToExpandHelpSystemoption0"
+          )}
         ></option>
         <option
           children="Weak"
           value="Weak"
-          {...getOverrideProps(overrides, "readyToExtendSupportoption1")}
+          {...getOverrideProps(
+            overrides,
+            "WillingnessToExpandHelpSystemoption1"
+          )}
         ></option>
         <option
           children="Medium"
           value="Medium"
-          {...getOverrideProps(overrides, "readyToExtendSupportoption2")}
+          {...getOverrideProps(
+            overrides,
+            "WillingnessToExpandHelpSystemoption2"
+          )}
         ></option>
         <option
           children="Strong"
           value="Strong"
-          {...getOverrideProps(overrides, "readyToExtendSupportoption3")}
+          {...getOverrideProps(
+            overrides,
+            "WillingnessToExpandHelpSystemoption3"
+          )}
         ></option>
       </SelectField>
       <SelectField
@@ -2323,35 +2666,37 @@ export default function QuestionUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments: value,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment,
             };
             const result = onChange(modelFields);
@@ -2384,6 +2729,79 @@ export default function QuestionUpdateForm(props) {
         ></option>
       </SelectField>
       <TextField
+        label="Availability of hours identified by interviewer"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={AvailabilityOfHoursIdentifiedByInterviewer}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              candidateName,
+              candidateAge,
+              candidateId,
+              candidateLocation,
+              interviewer,
+              Location,
+              interviewerJobLocation,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
+              learningReadiness,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
+              lastWorked,
+              maritalStatus,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
+              extentOfCareGiving,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
+              OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer: value,
+              comment,
+            };
+            const result = onChange(modelFields);
+            value = result?.AvailabilityOfHoursIdentifiedByInterviewer ?? value;
+          }
+          if (errors.AvailabilityOfHoursIdentifiedByInterviewer?.hasError) {
+            runValidationTasks(
+              "AvailabilityOfHoursIdentifiedByInterviewer",
+              value
+            );
+          }
+          setAvailabilityOfHoursIdentifiedByInterviewer(value);
+        }}
+        onBlur={() =>
+          runValidationTasks(
+            "AvailabilityOfHoursIdentifiedByInterviewer",
+            AvailabilityOfHoursIdentifiedByInterviewer
+          )
+        }
+        errorMessage={
+          errors.AvailabilityOfHoursIdentifiedByInterviewer?.errorMessage
+        }
+        hasError={errors.AvailabilityOfHoursIdentifiedByInterviewer?.hasError}
+        {...getOverrideProps(
+          overrides,
+          "AvailabilityOfHoursIdentifiedByInterviewer"
+        )}
+      ></TextField>
+      <TextField
         label="Comment"
         isRequired={false}
         isReadOnly={false}
@@ -2393,35 +2811,37 @@ export default function QuestionUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               candidateName,
+              candidateAge,
               candidateId,
               candidateLocation,
               interviewer,
-              interviewDate,
-              jobLocation,
-              roles,
+              Location,
               interviewerJobLocation,
-              typeOfContract,
-              driveToWork,
-              careerAmbition,
-              financialDrive,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
               learningReadiness,
-              jobSearch,
-              jobSuccess,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
               lastWorked,
               maritalStatus,
-              singleType,
-              kidsAge,
-              spouseSupportKids,
-              helperSupportKids,
-              familySupportKids,
-              spouseSupportHousehold,
-              helperSupportHousehold,
-              familySupportHousehold,
-              careGiving,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
               extentOfCareGiving,
-              helperSupportCareGiving,
-              readyToExtendSupport,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
               OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
               comment: value,
             };
             const result = onChange(modelFields);
