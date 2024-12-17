@@ -1083,14 +1083,19 @@ export default function QuestionUpdateForm(props) {
           {...getOverrideProps(overrides, "ResponsibilitiesAndRolesoption0")}
         ></option>
         <option
-          children="Team manager"
-          value="Team_Manager"
+          children="Team management"
+          value="Team_Management"
           {...getOverrideProps(overrides, "ResponsibilitiesAndRolesoption1")}
         ></option>
         <option
           children="Individual contributor"
           value="Individual_Contributor"
           {...getOverrideProps(overrides, "ResponsibilitiesAndRolesoption2")}
+        ></option>
+        <option
+          children="Coordinator"
+          value="Coordinator"
+          {...getOverrideProps(overrides, "ResponsibilitiesAndRolesoption3")}
         ></option>
       </SelectField>
       <SelectField
@@ -1155,13 +1160,13 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "TypeOfRoleSuitableFor")}
       >
         <option
-          children="Short term"
-          value="Short_Term"
+          children="Ok to start short term"
+          value="OK_to_start_short_Term"
           {...getOverrideProps(overrides, "TypeOfRoleSuitableForoption0")}
         ></option>
         <option
-          children="Long term"
-          value="Long_Term"
+          children="Strong preference for long term"
+          value="Strong_preference_for_long_term"
           {...getOverrideProps(overrides, "TypeOfRoleSuitableForoption1")}
         ></option>
       </SelectField>
@@ -1227,13 +1232,13 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "typeOfContractSuggested")}
       >
         <option
-          children="Short term"
-          value="Short_Term"
+          children="Ok to start short term"
+          value="OK_to_start_short_Term"
           {...getOverrideProps(overrides, "typeOfContractSuggestedoption0")}
         ></option>
         <option
-          children="Long term"
-          value="Long_Term"
+          children="Strong preference for long term"
+          value="Strong_preference_for_long_term"
           {...getOverrideProps(overrides, "typeOfContractSuggestedoption1")}
         ></option>
       </SelectField>
@@ -1307,8 +1312,8 @@ export default function QuestionUpdateForm(props) {
           {...getOverrideProps(overrides, "DriveToWorkOrIntentToWorkoption0")}
         ></option>
         <option
-          children="High"
-          value="High"
+          children="High but not doing much about it"
+          value="High_but_not_doing_much_about_it"
           {...getOverrideProps(overrides, "DriveToWorkOrIntentToWorkoption1")}
         ></option>
         <option
@@ -1382,23 +1387,23 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "ImmediateCareerAmbitions")}
       >
         <option
-          children="Wfh flexibility"
-          value="WFH_Flexibility"
+          children="Work from home and flexibility"
+          value="Work_from_home_and_flexibility"
           {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption0")}
         ></option>
         <option
-          children="Long term job"
-          value="Long_term_job"
+          children="While she is looking for the ideal full time long term job"
+          value="While_she_is_looking_for_the_ideal_full_time_long_term_job"
           {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption1")}
         ></option>
         <option
-          children="Utilize free time"
-          value="Utilize_free_Time"
+          children="In order to be busy be engaged and utilise her free time"
+          value="In_order_to_be_busy_be_engaged_and_utilise_her_free_time"
           {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption2")}
         ></option>
         <option
-          children="Restart work after break"
-          value="Restart_work_after_break"
+          children="To not p have a long gap on resume restart work after a break"
+          value="To_notP_have_a_long_gap_on_resume_restart_work_after_a_break"
           {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption3")}
         ></option>
       </SelectField>
@@ -1469,13 +1474,13 @@ export default function QuestionUpdateForm(props) {
           {...getOverrideProps(overrides, "financialDriveToWorkoption0")}
         ></option>
         <option
-          children="Contribute household minor"
-          value="Contribute_household_minor"
+          children="Contribute to household in a minor way"
+          value="Contribute_to_household_in_a_minor_way"
           {...getOverrideProps(overrides, "financialDriveToWorkoption1")}
         ></option>
         <option
-          children="Contribute household major"
-          value="Contribute_household_major"
+          children="Contribute to household in a major way"
+          value="Contribute_to_household_in_a_major_way"
           {...getOverrideProps(overrides, "financialDriveToWorkoption2")}
         ></option>
       </SelectField>
@@ -1541,13 +1546,13 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "learningReadiness")}
       >
         <option
-          children="Learning is essential"
-          value="learning_is_essential"
+          children="Learning new skills is extremely essential"
+          value="Learning_new_skills_is_extremely_essential"
           {...getOverrideProps(overrides, "learningReadinessoption0")}
         ></option>
         <option
-          children="Satisfaction work"
-          value="satisfaction_work"
+          children="Satisfied with working learning is also important"
+          value="Satisfied_with_working_learning_is_also_important"
           {...getOverrideProps(overrides, "learningReadinessoption1")}
         ></option>
       </SelectField>
@@ -1618,13 +1623,13 @@ export default function QuestionUpdateForm(props) {
           {...getOverrideProps(overrides, "JobSearchAndReadinessoption0")}
         ></option>
         <option
-          children="Moderately active"
-          value="Moderately_active"
+          children="Moderately looking"
+          value="Moderately_looking"
           {...getOverrideProps(overrides, "JobSearchAndReadinessoption1")}
         ></option>
         <option
-          children="Job search inactive"
-          value="Job_search_Inactive"
+          children="Job search has been inactive since some time"
+          value="Job_search_has_been_inactive_since_some_time"
           {...getOverrideProps(overrides, "JobSearchAndReadinessoption2")}
         ></option>
       </SelectField>
@@ -1693,16 +1698,16 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "JobSearchSuccessForShortTermJobs")}
       >
         <option
-          children="Not many callback"
-          value="Not_Many_callback"
+          children="Not got many or any call backs interes interviews"
+          value="Not_got_many_or_any_call_backs_interes_interviews"
           {...getOverrideProps(
             overrides,
             "JobSearchSuccessForShortTermJobsoption0"
           )}
         ></option>
         <option
-          children="Received callback"
-          value="Received_callback"
+          children="Received fair number of call backs interest interviews for jobs"
+          value="Received_fair_number_of_call_backs_interest_interviews_for_jobs"
           {...getOverrideProps(
             overrides,
             "JobSearchSuccessForShortTermJobsoption1"
@@ -1769,18 +1774,18 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "lastWorked")}
       >
         <option
-          children="Yrs 0 to 2"
-          value="Yrs_0__to_2"
+          children="Years 0 to 2"
+          value="Years_0_to_2"
           {...getOverrideProps(overrides, "lastWorkedoption0")}
         ></option>
         <option
-          children="Yrs more than 5"
-          value="Yrs_More__than_5"
+          children="Years 5 and above"
+          value="Years_5_and_above"
           {...getOverrideProps(overrides, "lastWorkedoption1")}
         ></option>
         <option
-          children="Yrs 2 to 5"
-          value="Yrs_2_to_5"
+          children="Years 2 to 5"
+          value="Years_2_to_5"
           {...getOverrideProps(overrides, "lastWorkedoption2")}
         ></option>
       </SelectField>
@@ -1929,8 +1934,8 @@ export default function QuestionUpdateForm(props) {
           {...getOverrideProps(overrides, "Singleoption1")}
         ></option>
         <option
-          children="Separated or divorced"
-          value="Separated_Or_Divorced"
+          children="Divorced widowed"
+          value="Divorced_Widowed"
           {...getOverrideProps(overrides, "Singleoption2")}
         ></option>
       </SelectField>
@@ -1999,23 +2004,23 @@ export default function QuestionUpdateForm(props) {
           {...getOverrideProps(overrides, "AgeOfYoungestKidoption0")}
         ></option>
         <option
-          children="Yrs 0 to 5"
-          value="Yrs_0_to_5"
+          children="Years 0 to 5"
+          value="Years_0_to_5"
           {...getOverrideProps(overrides, "AgeOfYoungestKidoption1")}
         ></option>
         <option
-          children="Yrs 5 to 12"
-          value="Yrs_5_to_12"
+          children="Years 5 to 12"
+          value="Years_5_to_12"
           {...getOverrideProps(overrides, "AgeOfYoungestKidoption2")}
         ></option>
         <option
-          children="Yrs 12 to 16"
-          value="Yrs_12_to_16"
+          children="Years 12 to 16"
+          value="Years_12_to_16"
           {...getOverrideProps(overrides, "AgeOfYoungestKidoption3")}
         ></option>
         <option
-          children="Yrs 16 to plus"
-          value="Yrs_16_to_plus"
+          children="Years 16 plus"
+          value="Years_16_plus"
           {...getOverrideProps(overrides, "AgeOfYoungestKidoption4")}
         ></option>
       </SelectField>
@@ -2737,13 +2742,13 @@ export default function QuestionUpdateForm(props) {
           {...getOverrideProps(overrides, "extentOfCareGivingoption1")}
         ></option>
         <option
-          children="Completely dependnet"
-          value="Completely_dependnet"
+          children="Completely dependent on care"
+          value="Completely_dependent_on_care"
           {...getOverrideProps(overrides, "extentOfCareGivingoption2")}
         ></option>
         <option
-          children="Partial care"
-          value="Partial_care"
+          children="Partial require care"
+          value="Partial_require_care"
           {...getOverrideProps(overrides, "extentOfCareGivingoption3")}
         ></option>
       </SelectField>
@@ -3006,18 +3011,18 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "OtherCommitments")}
       >
         <option
-          children="None or few"
-          value="None_Or_Few"
+          children="No or few commitments"
+          value="No_or_Few_commitments"
           {...getOverrideProps(overrides, "OtherCommitmentsoption0")}
         ></option>
         <option
-          children="Many"
-          value="Many"
+          children="Many commimentss"
+          value="Many_commimentss"
           {...getOverrideProps(overrides, "OtherCommitmentsoption1")}
         ></option>
         <option
-          children="Moderate and manageable"
-          value="Moderate_And_Manageable"
+          children="Moderate manageable commitments"
+          value="Moderate_manageable_commitments"
           {...getOverrideProps(overrides, "OtherCommitmentsoption2")}
         ></option>
       </SelectField>

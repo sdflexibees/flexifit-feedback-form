@@ -4,7 +4,7 @@ import { ageEnum, careEnum, careerAmbition, commitmentsEnum, contractEnum, exten
 
 export const schemaJSON =    {
       candidateName: {datatype:  a.string().required(),  weight: 1,    },
-      candidateAge : {datatype: a.enum( Object.keys(ageEnum) ),  weight: 1,    },
+    //   candidateAge : {datatype: a.enum( Object.keys(ageEnum) ),  weight: 1,    },
       candidateId : {datatype: a.string().required(), weight: 1,    },
       candidateLocation : {datatype: a.string().required(), weight: 1,    },
       candidateEmail : {datatype: a.email().required(), weight: 1,    },
