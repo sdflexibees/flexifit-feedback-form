@@ -28,6 +28,7 @@ export default function QuestionCreateForm(props) {
     candidateAge: "",
     candidateId: "",
     candidateLocation: "",
+    interViewDate: "",
     interviewer: "",
     Location: "",
     interviewerJobLocation: "",
@@ -69,6 +70,9 @@ export default function QuestionCreateForm(props) {
   );
   const [candidateLocation, setCandidateLocation] = React.useState(
     initialValues.candidateLocation
+  );
+  const [interViewDate, setInterViewDate] = React.useState(
+    initialValues.interViewDate
   );
   const [interviewer, setInterviewer] = React.useState(
     initialValues.interviewer
@@ -157,6 +161,7 @@ export default function QuestionCreateForm(props) {
     setCandidateAge(initialValues.candidateAge);
     setCandidateId(initialValues.candidateId);
     setCandidateLocation(initialValues.candidateLocation);
+    setInterViewDate(initialValues.interViewDate);
     setInterviewer(initialValues.interviewer);
     setLocation(initialValues.Location);
     setInterviewerJobLocation(initialValues.interviewerJobLocation);
@@ -209,6 +214,7 @@ export default function QuestionCreateForm(props) {
     candidateAge: [],
     candidateId: [{ type: "Required" }],
     candidateLocation: [{ type: "Required" }],
+    interViewDate: [{ type: "Required" }],
     interviewer: [{ type: "Required" }],
     Location: [{ type: "Required" }],
     interviewerJobLocation: [],
@@ -269,6 +275,7 @@ export default function QuestionCreateForm(props) {
           candidateAge,
           candidateId,
           candidateLocation,
+          interViewDate,
           interviewer,
           Location,
           interviewerJobLocation,
@@ -364,6 +371,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -420,6 +428,7 @@ export default function QuestionCreateForm(props) {
               candidateAge: value,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -497,6 +506,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId: value,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -553,6 +563,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation: value,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -599,6 +610,64 @@ export default function QuestionCreateForm(props) {
         {...getOverrideProps(overrides, "candidateLocation")}
       ></TextField>
       <TextField
+        label="Inter view date"
+        isRequired={true}
+        isReadOnly={false}
+        type="date"
+        value={interViewDate}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              candidateName,
+              candidateAge,
+              candidateId,
+              candidateLocation,
+              interViewDate: value,
+              interviewer,
+              Location,
+              interviewerJobLocation,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
+              learningReadiness,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
+              lastWorked,
+              maritalStatus,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
+              extentOfCareGiving,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
+              OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
+              comment,
+            };
+            const result = onChange(modelFields);
+            value = result?.interViewDate ?? value;
+          }
+          if (errors.interViewDate?.hasError) {
+            runValidationTasks("interViewDate", value);
+          }
+          setInterViewDate(value);
+        }}
+        onBlur={() => runValidationTasks("interViewDate", interViewDate)}
+        errorMessage={errors.interViewDate?.errorMessage}
+        hasError={errors.interViewDate?.hasError}
+        {...getOverrideProps(overrides, "interViewDate")}
+      ></TextField>
+      <TextField
         label="Interviewer"
         isRequired={true}
         isReadOnly={false}
@@ -611,6 +680,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer: value,
               Location,
               interviewerJobLocation,
@@ -667,6 +737,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location: value,
               interviewerJobLocation,
@@ -723,6 +794,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation: value,
@@ -781,6 +853,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -858,6 +931,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -927,6 +1001,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -996,6 +1071,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1073,6 +1149,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1155,6 +1232,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1229,6 +1307,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1298,6 +1377,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1372,6 +1452,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1450,6 +1531,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1522,6 +1604,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1594,6 +1677,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1666,6 +1750,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1748,6 +1833,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1830,6 +1916,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -1924,6 +2011,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2006,6 +2094,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2100,6 +2189,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2194,6 +2284,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2301,6 +2392,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2373,6 +2465,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2452,6 +2545,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2551,6 +2645,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2645,6 +2740,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2721,6 +2817,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,
@@ -2790,6 +2887,7 @@ export default function QuestionCreateForm(props) {
               candidateAge,
               candidateId,
               candidateLocation,
+              interViewDate,
               interviewer,
               Location,
               interviewerJobLocation,

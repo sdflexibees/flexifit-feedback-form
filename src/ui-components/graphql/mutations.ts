@@ -37,6 +37,7 @@ export const createQuestion = /* GraphQL */ `
       extentOfCareGiving
       financialDriveToWork
       id
+      interViewDate
       interviewer
       interviewerJobLocation
       lastWorked
@@ -83,6 +84,7 @@ export const deleteQuestion = /* GraphQL */ `
       extentOfCareGiving
       financialDriveToWork
       id
+      interViewDate
       interviewer
       interviewerJobLocation
       lastWorked
@@ -129,6 +131,7 @@ export const updateQuestion = /* GraphQL */ `
       extentOfCareGiving
       financialDriveToWork
       id
+      interViewDate
       interviewer
       interviewerJobLocation
       lastWorked
