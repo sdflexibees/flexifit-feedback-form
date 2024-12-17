@@ -29,7 +29,7 @@ export const schemaJSON =    {
       SupportFromHelpersForHouseholdChores: {datatype: a.enum( Object.keys(supportEnum) ),  weight: 1,    },
       SupportFromOtherFamilyMembersForKids: {datatype: a.enum( Object.keys(supportEnum) ),   weight: 1,    },    
       SupportFromOtherFamilyMembersForHouseholdChores: {datatype: a.enum( Object.keys(supportEnum) ),     weight: 1,    },
-    careGiving: {datatype: a.enum( Object.keys(careEnum) ),         weight: 1,    },
+      careGivingResponsibilities: {datatype: a.enum( Object.keys(careEnum) ),         weight: 1,    },
     extentOfCareGiving: {datatype: a.enum( Object.keys(extentEnum) ),         weight: 1,    },
     SupportFromHelpersForCareGivingChores: {datatype: a.enum( Object.keys(supportEnum) ),         weight: 1,    },
     WillingnessToExpandHelpSystem: {datatype: a.enum( Object.keys(supportEnum) ),         weight: 1,    },
