@@ -23,7 +23,7 @@ function App() {
       <Collection items={questions} type="list" isPaginated={true} isSearchable={true} itemsPerPage={2} column={3} row={5}>
         {(item, index) =>
           <Card key={index} backgroundColor={"inherit"} border={"brown"}>
-            {/* <Label children={item.interviewer} /> evaluated on <Label children={item.createdAt} />, <p></p> */}
+            <Label children={item.interviewer} /> evaluated on <Label children={item.createdAt} />, <p></p>
             Learning Readiness: <Label children={item.candidateName} /> , <p></p>
             Learning Readiness: <Label children={item.learningReadiness} /> , <p></p>
             Marital Status: <Label children={item.maritalStatus} /><p></p>

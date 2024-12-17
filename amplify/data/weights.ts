@@ -7,6 +7,8 @@ export const schemaJSON =    {
       candidateAge : {datatype: a.enum( Object.keys(ageEnum) ),  weight: 1,    },
       candidateId : {datatype: a.string().required(), weight: 1,    },
       candidateLocation : {datatype: a.string().required(), weight: 1,    },
+      candidateEmail : {datatype: a.email().required(), weight: 1,    },
+      candidatePhone : {datatype: a.phone().required(), weight: 1,    },
       interviewer : {datatype: a.string().required(),  weight: 1,    },
       Location : {datatype: a.string().required(),  weight: 1,    },
       interviewerJobLocation: {datatype: a.string(),  weight: 1,    },

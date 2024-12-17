@@ -29,6 +29,8 @@ export default function QuestionUpdateForm(props) {
     candidateName: "",
     candidateAge: "",
     candidateId: "",
+    candidateEmail: "",
+    candidatePhone: "",
     candidateLocation: "",
     interviewDate: "",
     interviewer: "",
@@ -69,6 +71,12 @@ export default function QuestionUpdateForm(props) {
   );
   const [candidateId, setCandidateId] = React.useState(
     initialValues.candidateId
+  );
+  const [candidateEmail, setCandidateEmail] = React.useState(
+    initialValues.candidateEmail
+  );
+  const [candidatePhone, setCandidatePhone] = React.useState(
+    initialValues.candidatePhone
   );
   const [candidateLocation, setCandidateLocation] = React.useState(
     initialValues.candidateLocation
@@ -165,6 +173,8 @@ export default function QuestionUpdateForm(props) {
     setCandidateName(cleanValues.candidateName);
     setCandidateAge(cleanValues.candidateAge);
     setCandidateId(cleanValues.candidateId);
+    setCandidateEmail(cleanValues.candidateEmail);
+    setCandidatePhone(cleanValues.candidatePhone);
     setCandidateLocation(cleanValues.candidateLocation);
     setInterviewDate(cleanValues.interviewDate);
     setInterviewer(cleanValues.interviewer);
@@ -232,6 +242,8 @@ export default function QuestionUpdateForm(props) {
     candidateName: [{ type: "Required" }],
     candidateAge: [],
     candidateId: [{ type: "Required" }],
+    candidateEmail: [{ type: "Required" }, { type: "Email" }],
+    candidatePhone: [{ type: "Required" }, { type: "Phone" }],
     candidateLocation: [{ type: "Required" }],
     interviewDate: [{ type: "Required" }],
     interviewer: [{ type: "Required" }],
@@ -293,6 +305,8 @@ export default function QuestionUpdateForm(props) {
           candidateName,
           candidateAge: candidateAge ?? null,
           candidateId,
+          candidateEmail,
+          candidatePhone,
           candidateLocation,
           interviewDate,
           interviewer,
@@ -394,6 +408,8 @@ export default function QuestionUpdateForm(props) {
               candidateName: value,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -451,6 +467,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge: value,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -529,6 +547,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId: value,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -575,6 +595,125 @@ export default function QuestionUpdateForm(props) {
         {...getOverrideProps(overrides, "candidateId")}
       ></TextField>
       <TextField
+        label="Candidate email"
+        isRequired={true}
+        isReadOnly={false}
+        value={candidateEmail}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              candidateName,
+              candidateAge,
+              candidateId,
+              candidateEmail: value,
+              candidatePhone,
+              candidateLocation,
+              interviewDate,
+              interviewer,
+              Location,
+              interviewerJobLocation,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
+              learningReadiness,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
+              lastWorked,
+              maritalStatus,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
+              extentOfCareGiving,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
+              OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
+              comment,
+            };
+            const result = onChange(modelFields);
+            value = result?.candidateEmail ?? value;
+          }
+          if (errors.candidateEmail?.hasError) {
+            runValidationTasks("candidateEmail", value);
+          }
+          setCandidateEmail(value);
+        }}
+        onBlur={() => runValidationTasks("candidateEmail", candidateEmail)}
+        errorMessage={errors.candidateEmail?.errorMessage}
+        hasError={errors.candidateEmail?.hasError}
+        {...getOverrideProps(overrides, "candidateEmail")}
+      ></TextField>
+      <TextField
+        label="Candidate phone"
+        isRequired={true}
+        isReadOnly={false}
+        type="tel"
+        value={candidatePhone}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              candidateName,
+              candidateAge,
+              candidateId,
+              candidateEmail,
+              candidatePhone: value,
+              candidateLocation,
+              interviewDate,
+              interviewer,
+              Location,
+              interviewerJobLocation,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
+              learningReadiness,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
+              lastWorked,
+              maritalStatus,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              careGivingResponsibilities,
+              extentOfCareGiving,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
+              OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
+              comment,
+            };
+            const result = onChange(modelFields);
+            value = result?.candidatePhone ?? value;
+          }
+          if (errors.candidatePhone?.hasError) {
+            runValidationTasks("candidatePhone", value);
+          }
+          setCandidatePhone(value);
+        }}
+        onBlur={() => runValidationTasks("candidatePhone", candidatePhone)}
+        errorMessage={errors.candidatePhone?.errorMessage}
+        hasError={errors.candidatePhone?.hasError}
+        {...getOverrideProps(overrides, "candidatePhone")}
+      ></TextField>
+      <TextField
         label="Candidate location"
         isRequired={true}
         isReadOnly={false}
@@ -586,6 +725,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation: value,
               interviewDate,
               interviewer,
@@ -646,6 +787,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate: value,
               interviewer,
@@ -703,6 +846,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer: value,
@@ -760,6 +905,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -817,6 +964,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -876,6 +1025,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -954,6 +1105,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1024,6 +1177,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1094,6 +1249,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1172,6 +1329,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1255,6 +1414,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1330,6 +1491,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1400,6 +1563,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1475,6 +1640,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1554,6 +1721,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1627,6 +1796,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1700,6 +1871,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1773,6 +1946,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1856,6 +2031,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -1939,6 +2116,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -2034,6 +2213,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -2117,6 +2298,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -2212,6 +2395,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -2307,6 +2492,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -2415,6 +2602,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -2488,6 +2677,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -2568,6 +2759,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -2668,6 +2861,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -2763,6 +2958,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -2840,6 +3037,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,
@@ -2910,6 +3109,8 @@ export default function QuestionUpdateForm(props) {
               candidateName,
               candidateAge,
               candidateId,
+              candidateEmail,
+              candidatePhone,
               candidateLocation,
               interviewDate,
               interviewer,

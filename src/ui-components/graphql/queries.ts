@@ -25,9 +25,11 @@ export const getQuestion = /* GraphQL */ `
       TypeOfRoleSuitableFor
       WillingnessToExpandHelpSystem
       candidateAge
+      candidateEmail
       candidateId
       candidateLocation
       candidateName
+      candidatePhone
       careGivingResponsibilities
       comment
       createdAt
@@ -74,9 +76,11 @@ export const listQuestions = /* GraphQL */ `
         TypeOfRoleSuitableFor
         WillingnessToExpandHelpSystem
         candidateAge
+        candidateEmail
         candidateId
         candidateLocation
         candidateName
+        candidatePhone
         careGivingResponsibilities
         comment
         createdAt

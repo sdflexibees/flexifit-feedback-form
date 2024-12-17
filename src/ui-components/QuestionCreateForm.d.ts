@@ -19,6 +19,8 @@ export declare type QuestionCreateFormInputValues = {
     candidateName?: string;
     candidateAge?: string;
     candidateId?: string;
+    candidateEmail?: string;
+    candidatePhone?: string;
     candidateLocation?: string;
     interviewDate?: string;
     interviewer?: string;
@@ -55,6 +57,8 @@ export declare type QuestionCreateFormValidationValues = {
     candidateName?: ValidationFunction<string>;
     candidateAge?: ValidationFunction<string>;
     candidateId?: ValidationFunction<string>;
+    candidateEmail?: ValidationFunction<string>;
+    candidatePhone?: ValidationFunction<string>;
     candidateLocation?: ValidationFunction<string>;
     interviewDate?: ValidationFunction<string>;
     interviewer?: ValidationFunction<string>;
@@ -93,6 +97,8 @@ export declare type QuestionCreateFormOverridesProps = {
     candidateName?: PrimitiveOverrideProps<TextFieldProps>;
     candidateAge?: PrimitiveOverrideProps<SelectFieldProps>;
     candidateId?: PrimitiveOverrideProps<TextFieldProps>;
+    candidateEmail?: PrimitiveOverrideProps<TextFieldProps>;
+    candidatePhone?: PrimitiveOverrideProps<TextFieldProps>;
     candidateLocation?: PrimitiveOverrideProps<TextFieldProps>;
     interviewDate?: PrimitiveOverrideProps<TextFieldProps>;
     interviewer?: PrimitiveOverrideProps<TextFieldProps>;
