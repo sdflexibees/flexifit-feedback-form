@@ -1,3 +1,7 @@
+export const ageEnum =  {
+  Years_21_to_25 : 1 ,
+  Years_25_to_30 : 2 ,Years_30_to_40 : 3 ,Years_40_and_above : 4 ,
+}
 
 
 export const  roleEnum =  {
@@ -17,7 +21,7 @@ export const  roleEnum =  {
   export const  careerAmbition=  {
     WFH_Flexibility : 3 ,
     Long_term_job : 1 ,
-   Utilize_free_Time : 2 ,
+    Utilize_free_Time : 2 ,
     Restart_work_after_break : 3 ,
   }
   
@@ -42,17 +46,17 @@ export const  roleEnum =  {
   
   }
   export const  recencyEnum =  {
-    Yrs_0_2 : 3 ,
-    Yrs_More_5 : 1 ,
-    Yrs_2_5: 2
+    Yrs_0__to_2 : 3 ,
+    Yrs_More__than_5 : 1 ,
+    Yrs_2_to_5: 2
   
   }
-  export const  ageEnum =  {
+  export const  kidsAgeEnum =  {
     No_kids : 0 ,
-    Yrs_0_5 : 1 ,
-    Yrs_5_12 : 2 ,
-    Yrs_12_16 : 3 ,
-    Yrs_16_plus : 4
+    Yrs_0_to_5 : 1 ,
+    Yrs_5_to_12 : 2 ,
+    Yrs_12_to_16 : 3 ,
+    Yrs_16_to_plus : 4
   }
   export const  maritalEnum =  {
    Not_Applicable : 0 ,
