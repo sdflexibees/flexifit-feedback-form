@@ -8,6 +8,7 @@ const schema = a.schema({
       candidateAge : a.enum( Object.keys(ageEnum) ),
       candidateId : a.string().required(),
       candidateLocation : a.string().required(),
+      interViewDate: a.date().required(),
       interviewer : a.string().required(),
       Location: a.string().required(),
       interviewerJobLocation: a.string(),
