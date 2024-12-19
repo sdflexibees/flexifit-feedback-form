@@ -34,7 +34,6 @@ export default function QuestionUpdateForm(props) {
     candidateLocation: "",
     interviewDate: "",
     interviewer: "",
-    Location: "",
     interviewerJobLocation: "",
     ResponsibilitiesAndRoles: "",
     TypeOfRoleSuitableFor: "",
@@ -61,7 +60,7 @@ export default function QuestionUpdateForm(props) {
     WillingnessToExpandHelpSystem: "",
     OtherCommitments: "",
     AvailabilityOfHoursIdentifiedByInterviewer: "",
-    comment: "",
+    Notes: "",
   };
   const [candidateName, setCandidateName] = React.useState(
     initialValues.candidateName
@@ -87,7 +86,6 @@ export default function QuestionUpdateForm(props) {
   const [interviewer, setInterviewer] = React.useState(
     initialValues.interviewer
   );
-  const [Location, setLocation] = React.useState(initialValues.Location);
   const [interviewerJobLocation, setInterviewerJobLocation] = React.useState(
     initialValues.interviewerJobLocation
   );
@@ -164,7 +162,7 @@ export default function QuestionUpdateForm(props) {
     AvailabilityOfHoursIdentifiedByInterviewer,
     setAvailabilityOfHoursIdentifiedByInterviewer,
   ] = React.useState(initialValues.AvailabilityOfHoursIdentifiedByInterviewer);
-  const [comment, setComment] = React.useState(initialValues.comment);
+  const [Notes, setNotes] = React.useState(initialValues.Notes);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = questionRecord
@@ -178,7 +176,6 @@ export default function QuestionUpdateForm(props) {
     setCandidateLocation(cleanValues.candidateLocation);
     setInterviewDate(cleanValues.interviewDate);
     setInterviewer(cleanValues.interviewer);
-    setLocation(cleanValues.Location);
     setInterviewerJobLocation(cleanValues.interviewerJobLocation);
     setResponsibilitiesAndRoles(cleanValues.ResponsibilitiesAndRoles);
     setTypeOfRoleSuitableFor(cleanValues.TypeOfRoleSuitableFor);
@@ -219,7 +216,7 @@ export default function QuestionUpdateForm(props) {
     setAvailabilityOfHoursIdentifiedByInterviewer(
       cleanValues.AvailabilityOfHoursIdentifiedByInterviewer
     );
-    setComment(cleanValues.comment);
+    setNotes(cleanValues.Notes);
     setErrors({});
   };
   const [questionRecord, setQuestionRecord] = React.useState(questionModelProp);
@@ -241,13 +238,12 @@ export default function QuestionUpdateForm(props) {
   const validations = {
     candidateName: [{ type: "Required" }],
     candidateAge: [],
-    candidateId: [{ type: "Required" }],
+    candidateId: [],
     candidateEmail: [{ type: "Required" }, { type: "Email" }],
     candidatePhone: [{ type: "Required" }, { type: "Phone" }],
     candidateLocation: [{ type: "Required" }],
     interviewDate: [{ type: "Required" }],
     interviewer: [{ type: "Required" }],
-    Location: [{ type: "Required" }],
     interviewerJobLocation: [],
     ResponsibilitiesAndRoles: [],
     TypeOfRoleSuitableFor: [],
@@ -274,7 +270,7 @@ export default function QuestionUpdateForm(props) {
     WillingnessToExpandHelpSystem: [],
     OtherCommitments: [],
     AvailabilityOfHoursIdentifiedByInterviewer: [],
-    comment: [],
+    Notes: [{ type: "Required" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -304,13 +300,12 @@ export default function QuestionUpdateForm(props) {
         let modelFields = {
           candidateName,
           candidateAge: candidateAge ?? null,
-          candidateId,
+          candidateId: candidateId ?? null,
           candidateEmail,
           candidatePhone,
           candidateLocation,
           interviewDate,
           interviewer,
-          Location,
           interviewerJobLocation: interviewerJobLocation ?? null,
           ResponsibilitiesAndRoles: ResponsibilitiesAndRoles ?? null,
           TypeOfRoleSuitableFor: TypeOfRoleSuitableFor ?? null,
@@ -344,7 +339,7 @@ export default function QuestionUpdateForm(props) {
           OtherCommitments: OtherCommitments ?? null,
           AvailabilityOfHoursIdentifiedByInterviewer:
             AvailabilityOfHoursIdentifiedByInterviewer ?? null,
-          comment: comment ?? null,
+          Notes,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -413,7 +408,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -440,7 +434,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.candidateName ?? value;
@@ -472,7 +466,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -499,7 +492,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.candidateAge ?? value;
@@ -537,7 +530,7 @@ export default function QuestionUpdateForm(props) {
       </SelectField>
       <TextField
         label="Candidate id"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={candidateId}
         onChange={(e) => {
@@ -552,7 +545,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -579,7 +571,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.candidateId ?? value;
@@ -611,7 +603,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -638,7 +629,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.candidateEmail ?? value;
@@ -671,7 +662,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -698,7 +688,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.candidatePhone ?? value;
@@ -730,7 +720,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation: value,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -757,7 +746,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.candidateLocation ?? value;
@@ -792,7 +781,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate: value,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -819,7 +807,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.interviewDate ?? value;
@@ -851,7 +839,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer: value,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -878,7 +865,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.interviewer ?? value;
@@ -892,65 +879,6 @@ export default function QuestionUpdateForm(props) {
         errorMessage={errors.interviewer?.errorMessage}
         hasError={errors.interviewer?.hasError}
         {...getOverrideProps(overrides, "interviewer")}
-      ></TextField>
-      <TextField
-        label="Location"
-        isRequired={true}
-        isReadOnly={false}
-        value={Location}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              candidateName,
-              candidateAge,
-              candidateId,
-              candidateEmail,
-              candidatePhone,
-              candidateLocation,
-              interviewDate,
-              interviewer,
-              Location: value,
-              interviewerJobLocation,
-              ResponsibilitiesAndRoles,
-              TypeOfRoleSuitableFor,
-              typeOfContractSuggested,
-              DriveToWorkOrIntentToWork,
-              ImmediateCareerAmbitions,
-              financialDriveToWork,
-              learningReadiness,
-              JobSearchAndReadiness,
-              JobSearchSuccessForShortTermJobs,
-              lastWorked,
-              maritalStatus,
-              Single,
-              AgeOfYoungestKid,
-              SupportFromSpouseForKids,
-              SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
-              SupportFromOtherFamilyMembersForKids,
-              SupportFromOtherFamilyMembersForHouseholdChores,
-              careGivingResponsibilities,
-              extentOfCareGiving,
-              SupportFromHelpersForCareGivingChores,
-              WillingnessToExpandHelpSystem,
-              OtherCommitments,
-              AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
-            };
-            const result = onChange(modelFields);
-            value = result?.Location ?? value;
-          }
-          if (errors.Location?.hasError) {
-            runValidationTasks("Location", value);
-          }
-          setLocation(value);
-        }}
-        onBlur={() => runValidationTasks("Location", Location)}
-        errorMessage={errors.Location?.errorMessage}
-        hasError={errors.Location?.hasError}
-        {...getOverrideProps(overrides, "Location")}
       ></TextField>
       <TextField
         label="Interviewer job location"
@@ -969,7 +897,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation: value,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -996,7 +923,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.interviewerJobLocation ?? value;
@@ -1030,7 +957,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles: value,
               TypeOfRoleSuitableFor,
@@ -1057,7 +983,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.ResponsibilitiesAndRoles ?? value;
@@ -1115,7 +1041,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor: value,
@@ -1142,7 +1067,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.TypeOfRoleSuitableFor ?? value;
@@ -1187,7 +1112,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -1214,7 +1138,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.typeOfContractSuggested ?? value;
@@ -1259,7 +1183,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -1286,7 +1209,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.DriveToWorkOrIntentToWork ?? value;
@@ -1339,7 +1262,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -1366,7 +1288,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.ImmediateCareerAmbitions ?? value;
@@ -1424,7 +1346,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -1451,7 +1372,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.financialDriveToWork ?? value;
@@ -1501,7 +1422,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -1528,7 +1448,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.learningReadiness ?? value;
@@ -1573,7 +1493,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -1600,7 +1519,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.JobSearchAndReadiness ?? value;
@@ -1650,7 +1569,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -1677,7 +1595,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.JobSearchSuccessForShortTermJobs ?? value;
@@ -1731,7 +1649,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -1758,7 +1675,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.lastWorked ?? value;
@@ -1806,7 +1723,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -1833,7 +1749,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.maritalStatus ?? value;
@@ -1881,7 +1797,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -1908,7 +1823,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.Single ?? value;
@@ -1956,7 +1871,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -1983,7 +1897,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.AgeOfYoungestKid ?? value;
@@ -2041,7 +1955,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -2068,7 +1981,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.SupportFromSpouseForKids ?? value;
@@ -2126,7 +2039,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -2153,7 +2065,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.SupportFromSpouseForHouseholdChores ?? value;
@@ -2223,7 +2135,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -2250,7 +2161,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.SupportFromHelpersForKids ?? value;
@@ -2308,7 +2219,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -2335,7 +2245,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.SupportFromHelpersForHouseholdChores ?? value;
@@ -2405,7 +2315,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -2432,7 +2341,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.SupportFromOtherFamilyMembersForKids ?? value;
@@ -2502,7 +2411,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -2529,7 +2437,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value =
@@ -2612,7 +2520,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -2639,7 +2546,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.careGivingResponsibilities ?? value;
@@ -2687,7 +2594,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -2714,7 +2620,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.extentOfCareGiving ?? value;
@@ -2769,7 +2675,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -2796,7 +2701,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.SupportFromHelpersForCareGivingChores ?? value;
@@ -2871,7 +2776,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -2898,7 +2802,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem: value,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.WillingnessToExpandHelpSystem ?? value;
@@ -2968,7 +2872,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -2995,7 +2898,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments: value,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.OtherCommitments ?? value;
@@ -3047,7 +2950,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -3074,7 +2976,7 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer: value,
-              comment,
+              Notes,
             };
             const result = onChange(modelFields);
             value = result?.AvailabilityOfHoursIdentifiedByInterviewer ?? value;
@@ -3103,10 +3005,10 @@ export default function QuestionUpdateForm(props) {
         )}
       ></TextField>
       <TextField
-        label="Comment"
-        isRequired={false}
+        label="Notes"
+        isRequired={true}
         isReadOnly={false}
-        value={comment}
+        value={Notes}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -3119,7 +3021,6 @@ export default function QuestionUpdateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              Location,
               interviewerJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
@@ -3146,20 +3047,20 @@ export default function QuestionUpdateForm(props) {
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
-              comment: value,
+              Notes: value,
             };
             const result = onChange(modelFields);
-            value = result?.comment ?? value;
+            value = result?.Notes ?? value;
           }
-          if (errors.comment?.hasError) {
-            runValidationTasks("comment", value);
+          if (errors.Notes?.hasError) {
+            runValidationTasks("Notes", value);
           }
-          setComment(value);
+          setNotes(value);
         }}
-        onBlur={() => runValidationTasks("comment", comment)}
-        errorMessage={errors.comment?.errorMessage}
-        hasError={errors.comment?.hasError}
-        {...getOverrideProps(overrides, "comment")}
+        onBlur={() => runValidationTasks("Notes", Notes)}
+        errorMessage={errors.Notes?.errorMessage}
+        hasError={errors.Notes?.hasError}
+        {...getOverrideProps(overrides, "Notes")}
       ></TextField>
       <Flex
         justifyContent="space-between"

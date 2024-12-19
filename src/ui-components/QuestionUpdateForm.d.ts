@@ -25,7 +25,6 @@ export declare type QuestionUpdateFormInputValues = {
     candidateLocation?: string;
     interviewDate?: string;
     interviewer?: string;
-    Location?: string;
     interviewerJobLocation?: string;
     ResponsibilitiesAndRoles?: string;
     TypeOfRoleSuitableFor?: string;
@@ -52,7 +51,7 @@ export declare type QuestionUpdateFormInputValues = {
     WillingnessToExpandHelpSystem?: string;
     OtherCommitments?: string;
     AvailabilityOfHoursIdentifiedByInterviewer?: number;
-    comment?: string;
+    Notes?: string;
 };
 export declare type QuestionUpdateFormValidationValues = {
     candidateName?: ValidationFunction<string>;
@@ -63,7 +62,6 @@ export declare type QuestionUpdateFormValidationValues = {
     candidateLocation?: ValidationFunction<string>;
     interviewDate?: ValidationFunction<string>;
     interviewer?: ValidationFunction<string>;
-    Location?: ValidationFunction<string>;
     interviewerJobLocation?: ValidationFunction<string>;
     ResponsibilitiesAndRoles?: ValidationFunction<string>;
     TypeOfRoleSuitableFor?: ValidationFunction<string>;
@@ -90,7 +88,7 @@ export declare type QuestionUpdateFormValidationValues = {
     WillingnessToExpandHelpSystem?: ValidationFunction<string>;
     OtherCommitments?: ValidationFunction<string>;
     AvailabilityOfHoursIdentifiedByInterviewer?: ValidationFunction<number>;
-    comment?: ValidationFunction<string>;
+    Notes?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type QuestionUpdateFormOverridesProps = {
@@ -103,7 +101,6 @@ export declare type QuestionUpdateFormOverridesProps = {
     candidateLocation?: PrimitiveOverrideProps<TextFieldProps>;
     interviewDate?: PrimitiveOverrideProps<TextFieldProps>;
     interviewer?: PrimitiveOverrideProps<TextFieldProps>;
-    Location?: PrimitiveOverrideProps<TextFieldProps>;
     interviewerJobLocation?: PrimitiveOverrideProps<TextFieldProps>;
     ResponsibilitiesAndRoles?: PrimitiveOverrideProps<SelectFieldProps>;
     TypeOfRoleSuitableFor?: PrimitiveOverrideProps<SelectFieldProps>;
@@ -130,7 +127,7 @@ export declare type QuestionUpdateFormOverridesProps = {
     WillingnessToExpandHelpSystem?: PrimitiveOverrideProps<SelectFieldProps>;
     OtherCommitments?: PrimitiveOverrideProps<SelectFieldProps>;
     AvailabilityOfHoursIdentifiedByInterviewer?: PrimitiveOverrideProps<TextFieldProps>;
-    comment?: PrimitiveOverrideProps<TextFieldProps>;
+    Notes?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type QuestionUpdateFormProps = React.PropsWithChildren<{
     overrides?: QuestionUpdateFormOverridesProps | undefined | null;

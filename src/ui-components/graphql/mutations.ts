@@ -14,7 +14,7 @@ export const createQuestion = /* GraphQL */ `
       ImmediateCareerAmbitions
       JobSearchAndReadiness
       JobSearchSuccessForShortTermJobs
-      Location
+      Notes
       OtherCommitments
       ResponsibilitiesAndRoles
       Single
@@ -34,7 +34,6 @@ export const createQuestion = /* GraphQL */ `
       candidateName
       candidatePhone
       careGivingResponsibilities
-      comment
       createdAt
       extentOfCareGiving
       financialDriveToWork
@@ -63,7 +62,7 @@ export const deleteQuestion = /* GraphQL */ `
       ImmediateCareerAmbitions
       JobSearchAndReadiness
       JobSearchSuccessForShortTermJobs
-      Location
+      Notes
       OtherCommitments
       ResponsibilitiesAndRoles
       Single
@@ -83,7 +82,6 @@ export const deleteQuestion = /* GraphQL */ `
       candidateName
       candidatePhone
       careGivingResponsibilities
-      comment
       createdAt
       extentOfCareGiving
       financialDriveToWork
@@ -112,7 +110,7 @@ export const updateQuestion = /* GraphQL */ `
       ImmediateCareerAmbitions
       JobSearchAndReadiness
       JobSearchSuccessForShortTermJobs
-      Location
+      Notes
       OtherCommitments
       ResponsibilitiesAndRoles
       Single
@@ -132,7 +130,6 @@ export const updateQuestion = /* GraphQL */ `
       candidateName
       candidatePhone
       careGivingResponsibilities
-      comment
       createdAt
       extentOfCareGiving
       financialDriveToWork
