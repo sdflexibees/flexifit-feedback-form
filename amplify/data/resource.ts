@@ -6,13 +6,12 @@ const schema = a.schema({
   Question : a.model({
       candidateName : a.string().required(),
       candidateAge : a.enum( Object.keys(ageEnum) ),
-      candidateId : a.string().required(),
+      candidateId : a.string(),
       candidateEmail: a.email().required().default("hi@flexibees.com"),
       candidatePhone: a.phone().required().default("+91-99999-99999"),
       candidateLocation : a.string().required(),
       interviewDate: a.date().required(),
       interviewer : a.string().required(),
-      Location: a.string().required(),
       interviewerJobLocation: a.string(),
       ResponsibilitiesAndRoles : a.enum( Object.keys(roleEnum) ),
       TypeOfRoleSuitableFor: a.enum( Object.keys(contractEnum) ),
@@ -39,7 +38,7 @@ const schema = a.schema({
       WillingnessToExpandHelpSystem: a.enum( Object.keys(supportEnum) ),
       OtherCommitments: a.enum( Object.keys(commitmentsEnum) ),
       AvailabilityOfHoursIdentifiedByInterviewer: a.integer(),
-      comment : a.string(),
+      Notes : a.string().required().default("Additional Comments"),
     })
     .authorization((allow: { publicApiKey: () => any; }) => [allow.publicApiKey()]),
 });

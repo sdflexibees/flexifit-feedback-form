@@ -28,7 +28,7 @@ function App() {
             Learning Readiness: <Label children={item.learningReadiness} /> , <p></p>
             Marital Status: <Label children={item.maritalStatus} /><p></p>
             Care Giving:  <Label children={item.careGivingResponsibilities} /><p></p>
-            Comment: <Label children={item.comment} /><p />
+            Comment: <Label children={item.Notes} /><p />
           </Card>
         }
       </Collection>
@@ -48,7 +48,7 @@ function App() {
       <Authenticator>
         {({ signOut }) => (
           <main>
-            <Heading level={1} children="Flexifit Feedback" alignSelf={"center"}></Heading>
+            <Heading level={1} children="FlexiFit Feedback" alignSelf={"center"}></Heading>
 
             <Link children="Signout" onClick={signOut} alignSelf={"end"} />
               <Tabs defaultValue="create" justifyContent={"stretch"}
