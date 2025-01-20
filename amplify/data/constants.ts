@@ -26,7 +26,7 @@ export const  roleEnum =  {
     Work_from_home_and_flexibility : 3 ,
     While_she_is_looking_for_the_ideal_full_time_long_term_job : 1 ,
     In_order_to_be_busy_be_engaged_and_utilise_her_free_time : 2 ,
-    To_notP_have_a_long_gap_on_resume_restart_work_after_a_break : 3 ,
+    To_not_have_a_long_gap_on_resume_restart_work_after_a_break : 3 ,
   }
   
   export const  learningEnum =  {
@@ -101,7 +101,7 @@ export const  roleEnum =  {
     
   export const  commitmentsEnum =  {
     No_or_Few_commitments : 0 ,
-    Many_commimentss : 1 ,
+    Many_commiments : 1 ,
     Moderate_manageable_commitments : 2 
     
   }

@@ -1,5 +1,26 @@
 ## Flexifit Feedback form for Recruiters
 Flexifit Feedback form is to capture the feedback from flexifit interview of candidates and understand their readiness for flexible jobs.
+### Local Testing:
+Built using - https://docs.amplify.aws/react/start/quickstart/#4-set-up-local-environment (Dec 2024)
+1. Run Sandbox using following command for locahost testing -
+npx ampx sandbox
+2. Run - UI
+npm run dev
+
+Steps:
+Data Model Changes:
+1. Make Changes to the amplify/data/resources file.
+2. Save the changes
+
+
+UI changes
+Original code built using - https://docs.amplify.aws/react/build-ui/formbuilder/ (Dec 2024)
+1. If Data Changes are there then regenerate the form - 
+npx ampx generate forms --out-dir src/ui-components
+2. UI specific changes can be done in the CSS file
+
+
+
 
 
 ## This application was built with following steps from - AWS Amplify React+Vite Starter Template
