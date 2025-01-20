@@ -1,4 +1,8 @@
-## AWS Amplify React+Vite Starter Template
+## Flexifit Feedback form for Recruiters
+Flexifit Feedback form is to capture the feedback from flexifit interview of candidates and understand their readiness for flexible jobs.
+
+
+## This application was built with following steps from - AWS Amplify React+Vite Starter Template
 
 This repository provides a starter template for creating applications using React+Vite and AWS Amplify, emphasizing easy setup for authentication, API, and database capabilities.
 
