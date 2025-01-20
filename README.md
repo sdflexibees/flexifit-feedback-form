@@ -19,9 +19,14 @@ Original code built using - https://docs.amplify.aws/react/build-ui/formbuilder/
 npx ampx generate forms --out-dir src/ui-components
 2. UI specific changes can be done in the CSS file
 
+# Data flow
+1. Form submits data to DynamoDB
+2. DynamoDB insert triggers Lambda Function
+3. Lambda Function updates RDS tables.
 
-
-
+Lambda Function triggered by this form
+Dev: https://ap-south-1.console.aws.amazon.com/lambda/home?region=ap-south-1#/functions/feedbackSummarize?tab=code
+Prod: https://ap-south-1.console.aws.amazon.com/lambda/home?region=ap-south-1#/functions/FlexifitSummaryProd?tab=code
 
 ## This application was built with following steps from - AWS Amplify React+Vite Starter Template
 
