@@ -1303,8 +1303,8 @@ export default function QuestionCreateForm(props) {
           {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption2")}
         ></option>
         <option
-          children="To not p have a long gap on resume restart work after a break"
-          value="To_notP_have_a_long_gap_on_resume_restart_work_after_a_break"
+          children="To not have a long gap on resume restart work after a break"
+          value="To_not_have_a_long_gap_on_resume_restart_work_after_a_break"
           {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption3")}
         ></option>
       </SelectField>
@@ -2898,8 +2898,8 @@ export default function QuestionCreateForm(props) {
           {...getOverrideProps(overrides, "OtherCommitmentsoption0")}
         ></option>
         <option
-          children="Many commimentss"
-          value="Many_commimentss"
+          children="Many commitments"
+          value="Many_commitments"
           {...getOverrideProps(overrides, "OtherCommitmentsoption1")}
         ></option>
         <option
