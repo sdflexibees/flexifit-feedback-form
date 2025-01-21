@@ -17,17 +17,17 @@ const response = await Interactions.send({
 // Log chatbot response
 console.log(response.message);
 
-Interactions.onComplete({
-  botName: "AskBeeAlias",
-  callback: (error?: Error, completion?: {[key: string]: any}) => {
-     if (error) {
-        alert('bot conversation failed');
-     } else if (completion) {
-        console.debug('done: ' + JSON.stringify(completion, null, 2));
-        alert('Trip booked. Thank you! What would you like to do next?');
-     }
-  }
-});
+// Interactions.onComplete({
+//   botName: "AskBeeAlias",
+//   callback: (error?: Error, completion?: {[key: string]: any}) => {
+//      if (error) {
+//         alert('bot conversation failed');
+//      } else if (completion) {
+//         console.debug('done: ' + JSON.stringify(completion, null, 2));
+//         alert('Trip booked. Thank you! What would you like to do next?');
+//      }
+//   }
+// });
 
 const client = generateClient<FormSchema>();
 function App() {
