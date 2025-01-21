@@ -4,7 +4,30 @@ import { useEffect, useState } from 'react';
 import { generateClient } from "aws-amplify/data";
 import { FormSchema } from '../amplify/data/resource';
 import QuestionCreateForm from './ui-components/QuestionCreateForm';
+import { Interactions } from '@aws-amplify/interactions';
 
+const userInput = "I want to reserve a hotel for tonight";
+
+// Provide a bot name and user input
+const response = await Interactions.send({
+  botName: "AskBeeAlias",
+  message: userInput
+});
+
+// Log chatbot response
+console.log(response.message);
+
+Interactions.onComplete({
+  botName: "AskBeeAlias",
+  callback: (error?: Error, completion?: {[key: string]: any}) => {
+     if (error) {
+        alert('bot conversation failed');
+     } else if (completion) {
+        console.debug('done: ' + JSON.stringify(completion, null, 2));
+        alert('Trip booked. Thank you! What would you like to do next?');
+     }
+  }
+});
 
 const client = generateClient<FormSchema>();
 function App() {
