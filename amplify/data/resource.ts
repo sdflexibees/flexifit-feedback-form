@@ -8,7 +8,7 @@ const schema = a.schema({
       candidateAge : a.enum( Object.keys(ageEnum) ),
       candidateId : a.string(),
       candidateEmail: a.email().required().default("hi@flexibees.com"),
-      candidatePhone: a.phone().required().default("+91-99999-99999"),
+      candidatePhone: a.phone().required().default("9999999999"),
       candidateLocation : a.string().required(),
       interviewDate: a.date().required(),
       interviewer : a.string().required(),

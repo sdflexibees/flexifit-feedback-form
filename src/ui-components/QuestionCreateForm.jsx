@@ -628,7 +628,7 @@ export default function QuestionCreateForm(props) {
         isReadOnly={false}
         type="tel"
         value={candidatePhone}
-        placeholder="+91-9999-9999"
+        placeholder="9876543210"
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
