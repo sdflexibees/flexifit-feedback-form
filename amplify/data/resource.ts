@@ -1,5 +1,5 @@
 import { type ClientSchema, a, defineData } from "@aws-amplify/backend";
-import { ageEnum, careEnum, careerAmbition, commitmentsEnum, contractEnum, extentEnum, financeEnum, kidsAgeEnum, learningEnum, maritalEnum, recencyEnum, roleEnum, searchEnum, searchResultEnum, singleTypeEnum, supportEnum, workEnum } from "./constants";
+import { ageEnum, careEnum, careerAmbition, commitmentsEnum, contractEnum, extentEnum, financeEnum, kidsAgeEnum, learningEnum, locationEnum, maritalEnum, recencyEnum, roleEnum, searchEnum, searchResultEnum, singleTypeEnum, supportEnum, workEnum } from "./constants";
 
 
 const schema = a.schema({  
@@ -12,7 +12,7 @@ const schema = a.schema({
       candidateLocation : a.string().required(),
       interviewDate: a.date().required(),
       interviewer : a.string().required(),
-      interviewerJobLocation: a.string(),
+      candidateJobLocation: a.enum( Object.keys(locationEnum) ),
       ResponsibilitiesAndRoles : a.enum( Object.keys(roleEnum) ),
       TypeOfRoleSuitableFor: a.enum( Object.keys(contractEnum) ),
       typeOfContractSuggested: a.enum( Object.keys(contractEnum) ),
@@ -28,16 +28,17 @@ const schema = a.schema({
       AgeOfYoungestKid: a.enum( Object.keys(kidsAgeEnum) ),
       SupportFromSpouseForKids: a.enum( Object.keys(supportEnum) ),
       SupportFromSpouseForHouseholdChores: a.enum( Object.keys(supportEnum) ),
+      SupportFromOtherFamilyMembersForKids: a.enum( Object.keys(supportEnum) ),      
+      SupportFromOtherFamilyMembersForHouseholdChores: a.enum( Object.keys(supportEnum) ),            
       SupportFromHelpersForKids: a.enum( Object.keys(supportEnum) ),
       SupportFromHelpersForHouseholdChores: a.enum( Object.keys(supportEnum) ),
-      SupportFromOtherFamilyMembersForKids: a.enum( Object.keys(supportEnum) ),      
-      SupportFromOtherFamilyMembersForHouseholdChores: a.enum( Object.keys(supportEnum) ),      
       careGivingResponsibilities: a.enum( Object.keys(careEnum) ),
       extentOfCareGiving: a.enum( Object.keys(extentEnum) ),
       SupportFromHelpersForCareGivingChores: a.enum( Object.keys(supportEnum) ),
       WillingnessToExpandHelpSystem: a.enum( Object.keys(supportEnum) ),
       OtherCommitments: a.enum( Object.keys(commitmentsEnum) ),
       AvailabilityOfHoursIdentifiedByInterviewer: a.integer(),
+      interviewerJobLocation: a.enum( Object.keys(locationEnum) ),
       Notes : a.string().required().default("Additional Comments"),
     })
     .authorization((allow: { publicApiKey: () => any; }) => [allow.publicApiKey()]),

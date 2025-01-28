@@ -27,6 +27,7 @@ export const getQuestion = /* GraphQL */ `
       candidateAge
       candidateEmail
       candidateId
+      candidateJobLocation
       candidateLocation
       candidateName
       candidatePhone
@@ -77,6 +78,7 @@ export const listQuestions = /* GraphQL */ `
         candidateAge
         candidateEmail
         candidateId
+        candidateJobLocation
         candidateLocation
         candidateName
         candidatePhone
