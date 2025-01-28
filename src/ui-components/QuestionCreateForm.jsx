@@ -628,7 +628,6 @@ export default function QuestionCreateForm(props) {
         isReadOnly={false}
         type="tel"
         value={candidatePhone}
-        placeholder="+91-9999-9999"
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -2899,7 +2898,7 @@ export default function QuestionCreateForm(props) {
         ></option>
         <option
           children="Many commitments"
-          value="Many_commitments"
+          value="Many_commiments"
           {...getOverrideProps(overrides, "OtherCommitmentsoption1")}
         ></option>
         <option

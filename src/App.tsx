@@ -4,18 +4,18 @@ import { useEffect, useState } from 'react';
 import { generateClient } from "aws-amplify/data";
 import { FormSchema } from '../amplify/data/resource';
 import QuestionCreateForm from './ui-components/QuestionCreateForm';
-import { Interactions } from '@aws-amplify/interactions';
+// import { Interactions } from '@aws-amplify/interactions';
 
-const userInput = "I want to reserve a hotel for tonight";
+// const userInput = "I want to reserve a hotel for tonight";
 
 // Provide a bot name and user input
-const response = await Interactions.send({
-  botName: "AskBeeAlias",
-  message: userInput
-});
+// const response = await Interactions.send({
+//   botName: "AskBeeAlias",
+//   message: userInput
+// });
 
 // Log chatbot response
-console.log(response.message);
+// console.log(response.message);
 
 // Interactions.onComplete({
 //   botName: "AskBeeAlias",
