@@ -30,6 +30,7 @@ export const createQuestion = /* GraphQL */ `
       candidateAge
       candidateEmail
       candidateId
+      candidateJobLocation
       candidateLocation
       candidateName
       candidatePhone
@@ -78,6 +79,7 @@ export const deleteQuestion = /* GraphQL */ `
       candidateAge
       candidateEmail
       candidateId
+      candidateJobLocation
       candidateLocation
       candidateName
       candidatePhone
@@ -126,6 +128,7 @@ export const updateQuestion = /* GraphQL */ `
       candidateAge
       candidateEmail
       candidateId
+      candidateJobLocation
       candidateLocation
       candidateName
       candidatePhone

@@ -24,7 +24,7 @@ export declare type QuestionCreateFormInputValues = {
     candidateLocation?: string;
     interviewDate?: string;
     interviewer?: string;
-    interviewerJobLocation?: string;
+    candidateJobLocation?: string;
     ResponsibilitiesAndRoles?: string;
     TypeOfRoleSuitableFor?: string;
     typeOfContractSuggested?: string;
@@ -40,16 +40,17 @@ export declare type QuestionCreateFormInputValues = {
     AgeOfYoungestKid?: string;
     SupportFromSpouseForKids?: string;
     SupportFromSpouseForHouseholdChores?: string;
-    SupportFromHelpersForKids?: string;
-    SupportFromHelpersForHouseholdChores?: string;
     SupportFromOtherFamilyMembersForKids?: string;
     SupportFromOtherFamilyMembersForHouseholdChores?: string;
+    SupportFromHelpersForKids?: string;
+    SupportFromHelpersForHouseholdChores?: string;
     careGivingResponsibilities?: string;
     extentOfCareGiving?: string;
     SupportFromHelpersForCareGivingChores?: string;
     WillingnessToExpandHelpSystem?: string;
     OtherCommitments?: string;
     AvailabilityOfHoursIdentifiedByInterviewer?: number;
+    interviewerJobLocation?: string;
     Notes?: string;
 };
 export declare type QuestionCreateFormValidationValues = {
@@ -61,7 +62,7 @@ export declare type QuestionCreateFormValidationValues = {
     candidateLocation?: ValidationFunction<string>;
     interviewDate?: ValidationFunction<string>;
     interviewer?: ValidationFunction<string>;
-    interviewerJobLocation?: ValidationFunction<string>;
+    candidateJobLocation?: ValidationFunction<string>;
     ResponsibilitiesAndRoles?: ValidationFunction<string>;
     TypeOfRoleSuitableFor?: ValidationFunction<string>;
     typeOfContractSuggested?: ValidationFunction<string>;
@@ -77,16 +78,17 @@ export declare type QuestionCreateFormValidationValues = {
     AgeOfYoungestKid?: ValidationFunction<string>;
     SupportFromSpouseForKids?: ValidationFunction<string>;
     SupportFromSpouseForHouseholdChores?: ValidationFunction<string>;
-    SupportFromHelpersForKids?: ValidationFunction<string>;
-    SupportFromHelpersForHouseholdChores?: ValidationFunction<string>;
     SupportFromOtherFamilyMembersForKids?: ValidationFunction<string>;
     SupportFromOtherFamilyMembersForHouseholdChores?: ValidationFunction<string>;
+    SupportFromHelpersForKids?: ValidationFunction<string>;
+    SupportFromHelpersForHouseholdChores?: ValidationFunction<string>;
     careGivingResponsibilities?: ValidationFunction<string>;
     extentOfCareGiving?: ValidationFunction<string>;
     SupportFromHelpersForCareGivingChores?: ValidationFunction<string>;
     WillingnessToExpandHelpSystem?: ValidationFunction<string>;
     OtherCommitments?: ValidationFunction<string>;
     AvailabilityOfHoursIdentifiedByInterviewer?: ValidationFunction<number>;
+    interviewerJobLocation?: ValidationFunction<string>;
     Notes?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
@@ -100,7 +102,7 @@ export declare type QuestionCreateFormOverridesProps = {
     candidateLocation?: PrimitiveOverrideProps<TextFieldProps>;
     interviewDate?: PrimitiveOverrideProps<TextFieldProps>;
     interviewer?: PrimitiveOverrideProps<TextFieldProps>;
-    interviewerJobLocation?: PrimitiveOverrideProps<TextFieldProps>;
+    candidateJobLocation?: PrimitiveOverrideProps<SelectFieldProps>;
     ResponsibilitiesAndRoles?: PrimitiveOverrideProps<SelectFieldProps>;
     TypeOfRoleSuitableFor?: PrimitiveOverrideProps<SelectFieldProps>;
     typeOfContractSuggested?: PrimitiveOverrideProps<SelectFieldProps>;
@@ -116,16 +118,17 @@ export declare type QuestionCreateFormOverridesProps = {
     AgeOfYoungestKid?: PrimitiveOverrideProps<SelectFieldProps>;
     SupportFromSpouseForKids?: PrimitiveOverrideProps<SelectFieldProps>;
     SupportFromSpouseForHouseholdChores?: PrimitiveOverrideProps<SelectFieldProps>;
-    SupportFromHelpersForKids?: PrimitiveOverrideProps<SelectFieldProps>;
-    SupportFromHelpersForHouseholdChores?: PrimitiveOverrideProps<SelectFieldProps>;
     SupportFromOtherFamilyMembersForKids?: PrimitiveOverrideProps<SelectFieldProps>;
     SupportFromOtherFamilyMembersForHouseholdChores?: PrimitiveOverrideProps<SelectFieldProps>;
+    SupportFromHelpersForKids?: PrimitiveOverrideProps<SelectFieldProps>;
+    SupportFromHelpersForHouseholdChores?: PrimitiveOverrideProps<SelectFieldProps>;
     careGivingResponsibilities?: PrimitiveOverrideProps<SelectFieldProps>;
     extentOfCareGiving?: PrimitiveOverrideProps<SelectFieldProps>;
     SupportFromHelpersForCareGivingChores?: PrimitiveOverrideProps<SelectFieldProps>;
     WillingnessToExpandHelpSystem?: PrimitiveOverrideProps<SelectFieldProps>;
     OtherCommitments?: PrimitiveOverrideProps<SelectFieldProps>;
     AvailabilityOfHoursIdentifiedByInterviewer?: PrimitiveOverrideProps<TextFieldProps>;
+    interviewerJobLocation?: PrimitiveOverrideProps<SelectFieldProps>;
     Notes?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type QuestionCreateFormProps = React.PropsWithChildren<{

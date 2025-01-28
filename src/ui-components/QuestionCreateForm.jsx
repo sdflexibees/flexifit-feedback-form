@@ -33,7 +33,7 @@ export default function QuestionCreateForm(props) {
     candidateLocation: "",
     interviewDate: "",
     interviewer: "",
-    interviewerJobLocation: "",
+    candidateJobLocation: "",
     ResponsibilitiesAndRoles: "",
     TypeOfRoleSuitableFor: "",
     typeOfContractSuggested: "",
@@ -49,16 +49,17 @@ export default function QuestionCreateForm(props) {
     AgeOfYoungestKid: "",
     SupportFromSpouseForKids: "",
     SupportFromSpouseForHouseholdChores: "",
-    SupportFromHelpersForKids: "",
-    SupportFromHelpersForHouseholdChores: "",
     SupportFromOtherFamilyMembersForKids: "",
     SupportFromOtherFamilyMembersForHouseholdChores: "",
+    SupportFromHelpersForKids: "",
+    SupportFromHelpersForHouseholdChores: "",
     careGivingResponsibilities: "",
     extentOfCareGiving: "",
     SupportFromHelpersForCareGivingChores: "",
     WillingnessToExpandHelpSystem: "",
     OtherCommitments: "",
     AvailabilityOfHoursIdentifiedByInterviewer: "",
+    interviewerJobLocation: "",
     Notes: "",
   };
   const [candidateName, setCandidateName] = React.useState(
@@ -85,8 +86,8 @@ export default function QuestionCreateForm(props) {
   const [interviewer, setInterviewer] = React.useState(
     initialValues.interviewer
   );
-  const [interviewerJobLocation, setInterviewerJobLocation] = React.useState(
-    initialValues.interviewerJobLocation
+  const [candidateJobLocation, setCandidateJobLocation] = React.useState(
+    initialValues.candidateJobLocation
   );
   const [ResponsibilitiesAndRoles, setResponsibilitiesAndRoles] =
     React.useState(initialValues.ResponsibilitiesAndRoles);
@@ -127,12 +128,6 @@ export default function QuestionCreateForm(props) {
     SupportFromSpouseForHouseholdChores,
     setSupportFromSpouseForHouseholdChores,
   ] = React.useState(initialValues.SupportFromSpouseForHouseholdChores);
-  const [SupportFromHelpersForKids, setSupportFromHelpersForKids] =
-    React.useState(initialValues.SupportFromHelpersForKids);
-  const [
-    SupportFromHelpersForHouseholdChores,
-    setSupportFromHelpersForHouseholdChores,
-  ] = React.useState(initialValues.SupportFromHelpersForHouseholdChores);
   const [
     SupportFromOtherFamilyMembersForKids,
     setSupportFromOtherFamilyMembersForKids,
@@ -143,6 +138,12 @@ export default function QuestionCreateForm(props) {
   ] = React.useState(
     initialValues.SupportFromOtherFamilyMembersForHouseholdChores
   );
+  const [SupportFromHelpersForKids, setSupportFromHelpersForKids] =
+    React.useState(initialValues.SupportFromHelpersForKids);
+  const [
+    SupportFromHelpersForHouseholdChores,
+    setSupportFromHelpersForHouseholdChores,
+  ] = React.useState(initialValues.SupportFromHelpersForHouseholdChores);
   const [careGivingResponsibilities, setCareGivingResponsibilities] =
     React.useState(initialValues.careGivingResponsibilities);
   const [extentOfCareGiving, setExtentOfCareGiving] = React.useState(
@@ -161,6 +162,9 @@ export default function QuestionCreateForm(props) {
     AvailabilityOfHoursIdentifiedByInterviewer,
     setAvailabilityOfHoursIdentifiedByInterviewer,
   ] = React.useState(initialValues.AvailabilityOfHoursIdentifiedByInterviewer);
+  const [interviewerJobLocation, setInterviewerJobLocation] = React.useState(
+    initialValues.interviewerJobLocation
+  );
   const [Notes, setNotes] = React.useState(initialValues.Notes);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
@@ -172,7 +176,7 @@ export default function QuestionCreateForm(props) {
     setCandidateLocation(initialValues.candidateLocation);
     setInterviewDate(initialValues.interviewDate);
     setInterviewer(initialValues.interviewer);
-    setInterviewerJobLocation(initialValues.interviewerJobLocation);
+    setCandidateJobLocation(initialValues.candidateJobLocation);
     setResponsibilitiesAndRoles(initialValues.ResponsibilitiesAndRoles);
     setTypeOfRoleSuitableFor(initialValues.TypeOfRoleSuitableFor);
     setTypeOfContractSuggested(initialValues.typeOfContractSuggested);
@@ -192,15 +196,15 @@ export default function QuestionCreateForm(props) {
     setSupportFromSpouseForHouseholdChores(
       initialValues.SupportFromSpouseForHouseholdChores
     );
-    setSupportFromHelpersForKids(initialValues.SupportFromHelpersForKids);
-    setSupportFromHelpersForHouseholdChores(
-      initialValues.SupportFromHelpersForHouseholdChores
-    );
     setSupportFromOtherFamilyMembersForKids(
       initialValues.SupportFromOtherFamilyMembersForKids
     );
     setSupportFromOtherFamilyMembersForHouseholdChores(
       initialValues.SupportFromOtherFamilyMembersForHouseholdChores
+    );
+    setSupportFromHelpersForKids(initialValues.SupportFromHelpersForKids);
+    setSupportFromHelpersForHouseholdChores(
+      initialValues.SupportFromHelpersForHouseholdChores
     );
     setCareGivingResponsibilities(initialValues.careGivingResponsibilities);
     setExtentOfCareGiving(initialValues.extentOfCareGiving);
@@ -214,6 +218,7 @@ export default function QuestionCreateForm(props) {
     setAvailabilityOfHoursIdentifiedByInterviewer(
       initialValues.AvailabilityOfHoursIdentifiedByInterviewer
     );
+    setInterviewerJobLocation(initialValues.interviewerJobLocation);
     setNotes(initialValues.Notes);
     setErrors({});
   };
@@ -226,7 +231,7 @@ export default function QuestionCreateForm(props) {
     candidateLocation: [{ type: "Required" }],
     interviewDate: [{ type: "Required" }],
     interviewer: [{ type: "Required" }],
-    interviewerJobLocation: [],
+    candidateJobLocation: [],
     ResponsibilitiesAndRoles: [],
     TypeOfRoleSuitableFor: [],
     typeOfContractSuggested: [],
@@ -242,16 +247,17 @@ export default function QuestionCreateForm(props) {
     AgeOfYoungestKid: [],
     SupportFromSpouseForKids: [],
     SupportFromSpouseForHouseholdChores: [],
-    SupportFromHelpersForKids: [],
-    SupportFromHelpersForHouseholdChores: [],
     SupportFromOtherFamilyMembersForKids: [],
     SupportFromOtherFamilyMembersForHouseholdChores: [],
+    SupportFromHelpersForKids: [],
+    SupportFromHelpersForHouseholdChores: [],
     careGivingResponsibilities: [],
     extentOfCareGiving: [],
     SupportFromHelpersForCareGivingChores: [],
     WillingnessToExpandHelpSystem: [],
     OtherCommitments: [],
     AvailabilityOfHoursIdentifiedByInterviewer: [],
+    interviewerJobLocation: [],
     Notes: [{ type: "Required" }],
   };
   const runValidationTasks = async (
@@ -288,7 +294,7 @@ export default function QuestionCreateForm(props) {
           candidateLocation,
           interviewDate,
           interviewer,
-          interviewerJobLocation,
+          candidateJobLocation,
           ResponsibilitiesAndRoles,
           TypeOfRoleSuitableFor,
           typeOfContractSuggested,
@@ -304,16 +310,17 @@ export default function QuestionCreateForm(props) {
           AgeOfYoungestKid,
           SupportFromSpouseForKids,
           SupportFromSpouseForHouseholdChores,
-          SupportFromHelpersForKids,
-          SupportFromHelpersForHouseholdChores,
           SupportFromOtherFamilyMembersForKids,
           SupportFromOtherFamilyMembersForHouseholdChores,
+          SupportFromHelpersForKids,
+          SupportFromHelpersForHouseholdChores,
           careGivingResponsibilities,
           extentOfCareGiving,
           SupportFromHelpersForCareGivingChores,
           WillingnessToExpandHelpSystem,
           OtherCommitments,
           AvailabilityOfHoursIdentifiedByInterviewer,
+          interviewerJobLocation,
           Notes,
         };
         const validationResponses = await Promise.all(
@@ -385,7 +392,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -401,16 +408,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -443,7 +451,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -459,16 +467,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -522,7 +531,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -538,16 +547,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -581,7 +591,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -597,16 +607,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -641,7 +652,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -657,16 +668,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -699,7 +711,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation: value,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -715,16 +727,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -760,7 +773,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate: value,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -776,16 +789,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -818,7 +832,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer: value,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -834,16 +848,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -859,11 +874,11 @@ export default function QuestionCreateForm(props) {
         hasError={errors.interviewer?.hasError}
         {...getOverrideProps(overrides, "interviewer")}
       ></TextField>
-      <TextField
-        label="Interviewer suggestion - job location"
-        isRequired={false}
-        isReadOnly={false}
-        value={interviewerJobLocation}
+      <SelectField
+        label="Candidate preferrd job location"
+        placeholder="Please select an option"
+        isDisabled={false}
+        value={candidateJobLocation}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -876,7 +891,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation: value,
+              candidateJobLocation: value,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -892,33 +907,65 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
-            value = result?.interviewerJobLocation ?? value;
+            value = result?.candidateJobLocation ?? value;
           }
-          if (errors.interviewerJobLocation?.hasError) {
-            runValidationTasks("interviewerJobLocation", value);
+          if (errors.candidateJobLocation?.hasError) {
+            runValidationTasks("candidateJobLocation", value);
           }
-          setInterviewerJobLocation(value);
+          setCandidateJobLocation(value);
         }}
         onBlur={() =>
-          runValidationTasks("interviewerJobLocation", interviewerJobLocation)
+          runValidationTasks("candidateJobLocation", candidateJobLocation)
         }
-        errorMessage={errors.interviewerJobLocation?.errorMessage}
-        hasError={errors.interviewerJobLocation?.hasError}
-        {...getOverrideProps(overrides, "interviewerJobLocation")}
-      ></TextField>
+        errorMessage={errors.candidateJobLocation?.errorMessage}
+        hasError={errors.candidateJobLocation?.hasError}
+        {...getOverrideProps(overrides, "candidateJobLocation")}
+      >
+        <option
+          children="Part time wfh"
+          value="Part_Time_WFH"
+          {...getOverrideProps(overrides, "candidateJobLocationoption0")}
+        ></option>
+        <option
+          children="Part time office"
+          value="Part_Time_Office"
+          {...getOverrideProps(overrides, "candidateJobLocationoption1")}
+        ></option>
+        <option
+          children="Part time hybrid"
+          value="Part_Time_Hybrid"
+          {...getOverrideProps(overrides, "candidateJobLocationoption2")}
+        ></option>
+        <option
+          children="Full time wfh"
+          value="Full_time_WFH"
+          {...getOverrideProps(overrides, "candidateJobLocationoption3")}
+        ></option>
+        <option
+          children="Full time office"
+          value="Full_time_Office"
+          {...getOverrideProps(overrides, "candidateJobLocationoption4")}
+        ></option>
+        <option
+          children="Full time hybrid"
+          value="Full_time_Hybrid"
+          {...getOverrideProps(overrides, "candidateJobLocationoption5")}
+        ></option>
+      </SelectField>
       <SelectField
         label="Responsibilities and roles"
         placeholder="Please select an option"
@@ -936,7 +983,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles: value,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -952,16 +999,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1020,7 +1068,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor: value,
               typeOfContractSuggested,
@@ -1036,16 +1084,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1091,7 +1140,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested: value,
@@ -1107,16 +1156,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1162,7 +1212,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -1178,16 +1228,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1214,7 +1265,7 @@ export default function QuestionCreateForm(props) {
           {...getOverrideProps(overrides, "DriveToWorkOrIntentToWorkoption0")}
         ></option>
         <option
-          children="High, but not doing much about it"
+          children="High but not doing much about it"
           value="High_but_not_doing_much_about_it"
           {...getOverrideProps(overrides, "DriveToWorkOrIntentToWorkoption1")}
         ></option>
@@ -1241,7 +1292,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -1257,16 +1308,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1303,7 +1355,7 @@ export default function QuestionCreateForm(props) {
           {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption2")}
         ></option>
         <option
-          children="To not have a long gap on resume, restart work after a break"
+          children="To not have a long gap on resume restart work after a break"
           value="To_not_have_a_long_gap_on_resume_restart_work_after_a_break"
           {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption3")}
         ></option>
@@ -1325,7 +1377,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -1341,16 +1393,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1401,7 +1454,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -1417,16 +1470,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1450,7 +1504,7 @@ export default function QuestionCreateForm(props) {
           {...getOverrideProps(overrides, "learningReadinessoption0")}
         ></option>
         <option
-          children="Satisfied with working, learning is also important"
+          children="Satisfied with working learning is also important"
           value="Satisfied_with_working_learning_is_also_important"
           {...getOverrideProps(overrides, "learningReadinessoption1")}
         ></option>
@@ -1472,7 +1526,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -1488,16 +1542,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1548,7 +1603,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -1564,16 +1619,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1595,7 +1651,7 @@ export default function QuestionCreateForm(props) {
         {...getOverrideProps(overrides, "JobSearchSuccessForShortTermJobs")}
       >
         <option
-          children="Not got many or any call backs for interviews"
+          children="Not got many or any call backs interes interviews"
           value="Not_got_many_or_any_call_backs_interes_interviews"
           {...getOverrideProps(
             overrides,
@@ -1603,7 +1659,7 @@ export default function QuestionCreateForm(props) {
           )}
         ></option>
         <option
-          children="Received fair number of call backs/interest interviews for jobs"
+          children="Received fair number of call backs interest interviews for jobs"
           value="Received_fair_number_of_call_backs_interest_interviews_for_jobs"
           {...getOverrideProps(
             overrides,
@@ -1628,7 +1684,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -1644,16 +1700,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1702,7 +1759,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -1718,16 +1775,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1776,7 +1834,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -1792,16 +1850,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1850,7 +1909,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -1866,16 +1925,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid: value,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -1934,7 +1994,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -1950,16 +2010,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids: value,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -2018,7 +2079,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -2034,16 +2095,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores: value,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -2098,186 +2160,6 @@ export default function QuestionCreateForm(props) {
         ></option>
       </SelectField>
       <SelectField
-        label="Support from helpers for kids"
-        placeholder="Please select an option"
-        isDisabled={false}
-        value={SupportFromHelpersForKids}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              candidateName,
-              candidateAge,
-              candidateId,
-              candidateEmail,
-              candidatePhone,
-              candidateLocation,
-              interviewDate,
-              interviewer,
-              interviewerJobLocation,
-              ResponsibilitiesAndRoles,
-              TypeOfRoleSuitableFor,
-              typeOfContractSuggested,
-              DriveToWorkOrIntentToWork,
-              ImmediateCareerAmbitions,
-              financialDriveToWork,
-              learningReadiness,
-              JobSearchAndReadiness,
-              JobSearchSuccessForShortTermJobs,
-              lastWorked,
-              maritalStatus,
-              Single,
-              AgeOfYoungestKid,
-              SupportFromSpouseForKids,
-              SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids: value,
-              SupportFromHelpersForHouseholdChores,
-              SupportFromOtherFamilyMembersForKids,
-              SupportFromOtherFamilyMembersForHouseholdChores,
-              careGivingResponsibilities,
-              extentOfCareGiving,
-              SupportFromHelpersForCareGivingChores,
-              WillingnessToExpandHelpSystem,
-              OtherCommitments,
-              AvailabilityOfHoursIdentifiedByInterviewer,
-              Notes,
-            };
-            const result = onChange(modelFields);
-            value = result?.SupportFromHelpersForKids ?? value;
-          }
-          if (errors.SupportFromHelpersForKids?.hasError) {
-            runValidationTasks("SupportFromHelpersForKids", value);
-          }
-          setSupportFromHelpersForKids(value);
-        }}
-        onBlur={() =>
-          runValidationTasks(
-            "SupportFromHelpersForKids",
-            SupportFromHelpersForKids
-          )
-        }
-        errorMessage={errors.SupportFromHelpersForKids?.errorMessage}
-        hasError={errors.SupportFromHelpersForKids?.hasError}
-        {...getOverrideProps(overrides, "SupportFromHelpersForKids")}
-      >
-        <option
-          children="Not applicable"
-          value="Not_Applicable"
-          {...getOverrideProps(overrides, "SupportFromHelpersForKidsoption0")}
-        ></option>
-        <option
-          children="Weak"
-          value="Weak"
-          {...getOverrideProps(overrides, "SupportFromHelpersForKidsoption1")}
-        ></option>
-        <option
-          children="Medium"
-          value="Medium"
-          {...getOverrideProps(overrides, "SupportFromHelpersForKidsoption2")}
-        ></option>
-        <option
-          children="Strong"
-          value="Strong"
-          {...getOverrideProps(overrides, "SupportFromHelpersForKidsoption3")}
-        ></option>
-      </SelectField>
-      <SelectField
-        label="Support from helpers for household chores"
-        placeholder="Please select an option"
-        isDisabled={false}
-        value={SupportFromHelpersForHouseholdChores}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              candidateName,
-              candidateAge,
-              candidateId,
-              candidateEmail,
-              candidatePhone,
-              candidateLocation,
-              interviewDate,
-              interviewer,
-              interviewerJobLocation,
-              ResponsibilitiesAndRoles,
-              TypeOfRoleSuitableFor,
-              typeOfContractSuggested,
-              DriveToWorkOrIntentToWork,
-              ImmediateCareerAmbitions,
-              financialDriveToWork,
-              learningReadiness,
-              JobSearchAndReadiness,
-              JobSearchSuccessForShortTermJobs,
-              lastWorked,
-              maritalStatus,
-              Single,
-              AgeOfYoungestKid,
-              SupportFromSpouseForKids,
-              SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores: value,
-              SupportFromOtherFamilyMembersForKids,
-              SupportFromOtherFamilyMembersForHouseholdChores,
-              careGivingResponsibilities,
-              extentOfCareGiving,
-              SupportFromHelpersForCareGivingChores,
-              WillingnessToExpandHelpSystem,
-              OtherCommitments,
-              AvailabilityOfHoursIdentifiedByInterviewer,
-              Notes,
-            };
-            const result = onChange(modelFields);
-            value = result?.SupportFromHelpersForHouseholdChores ?? value;
-          }
-          if (errors.SupportFromHelpersForHouseholdChores?.hasError) {
-            runValidationTasks("SupportFromHelpersForHouseholdChores", value);
-          }
-          setSupportFromHelpersForHouseholdChores(value);
-        }}
-        onBlur={() =>
-          runValidationTasks(
-            "SupportFromHelpersForHouseholdChores",
-            SupportFromHelpersForHouseholdChores
-          )
-        }
-        errorMessage={errors.SupportFromHelpersForHouseholdChores?.errorMessage}
-        hasError={errors.SupportFromHelpersForHouseholdChores?.hasError}
-        {...getOverrideProps(overrides, "SupportFromHelpersForHouseholdChores")}
-      >
-        <option
-          children="Not applicable"
-          value="Not_Applicable"
-          {...getOverrideProps(
-            overrides,
-            "SupportFromHelpersForHouseholdChoresoption0"
-          )}
-        ></option>
-        <option
-          children="Weak"
-          value="Weak"
-          {...getOverrideProps(
-            overrides,
-            "SupportFromHelpersForHouseholdChoresoption1"
-          )}
-        ></option>
-        <option
-          children="Medium"
-          value="Medium"
-          {...getOverrideProps(
-            overrides,
-            "SupportFromHelpersForHouseholdChoresoption2"
-          )}
-        ></option>
-        <option
-          children="Strong"
-          value="Strong"
-          {...getOverrideProps(
-            overrides,
-            "SupportFromHelpersForHouseholdChoresoption3"
-          )}
-        ></option>
-      </SelectField>
-      <SelectField
         label="Support from other family members for kids"
         placeholder="Please select an option"
         isDisabled={false}
@@ -2294,7 +2176,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -2310,16 +2192,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids: value,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -2390,7 +2273,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -2406,16 +2289,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores: value,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -2483,6 +2367,188 @@ export default function QuestionCreateForm(props) {
         ></option>
       </SelectField>
       <SelectField
+        label="Support from helpers for kids"
+        placeholder="Please select an option"
+        isDisabled={false}
+        value={SupportFromHelpersForKids}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              candidateName,
+              candidateAge,
+              candidateId,
+              candidateEmail,
+              candidatePhone,
+              candidateLocation,
+              interviewDate,
+              interviewer,
+              candidateJobLocation,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
+              learningReadiness,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
+              lastWorked,
+              maritalStatus,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids: value,
+              SupportFromHelpersForHouseholdChores,
+              careGivingResponsibilities,
+              extentOfCareGiving,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
+              OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
+              Notes,
+            };
+            const result = onChange(modelFields);
+            value = result?.SupportFromHelpersForKids ?? value;
+          }
+          if (errors.SupportFromHelpersForKids?.hasError) {
+            runValidationTasks("SupportFromHelpersForKids", value);
+          }
+          setSupportFromHelpersForKids(value);
+        }}
+        onBlur={() =>
+          runValidationTasks(
+            "SupportFromHelpersForKids",
+            SupportFromHelpersForKids
+          )
+        }
+        errorMessage={errors.SupportFromHelpersForKids?.errorMessage}
+        hasError={errors.SupportFromHelpersForKids?.hasError}
+        {...getOverrideProps(overrides, "SupportFromHelpersForKids")}
+      >
+        <option
+          children="Not applicable"
+          value="Not_Applicable"
+          {...getOverrideProps(overrides, "SupportFromHelpersForKidsoption0")}
+        ></option>
+        <option
+          children="Weak"
+          value="Weak"
+          {...getOverrideProps(overrides, "SupportFromHelpersForKidsoption1")}
+        ></option>
+        <option
+          children="Medium"
+          value="Medium"
+          {...getOverrideProps(overrides, "SupportFromHelpersForKidsoption2")}
+        ></option>
+        <option
+          children="Strong"
+          value="Strong"
+          {...getOverrideProps(overrides, "SupportFromHelpersForKidsoption3")}
+        ></option>
+      </SelectField>
+      <SelectField
+        label="Support from helpers for household chores"
+        placeholder="Please select an option"
+        isDisabled={false}
+        value={SupportFromHelpersForHouseholdChores}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              candidateName,
+              candidateAge,
+              candidateId,
+              candidateEmail,
+              candidatePhone,
+              candidateLocation,
+              interviewDate,
+              interviewer,
+              candidateJobLocation,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
+              learningReadiness,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
+              lastWorked,
+              maritalStatus,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores: value,
+              careGivingResponsibilities,
+              extentOfCareGiving,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
+              OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
+              Notes,
+            };
+            const result = onChange(modelFields);
+            value = result?.SupportFromHelpersForHouseholdChores ?? value;
+          }
+          if (errors.SupportFromHelpersForHouseholdChores?.hasError) {
+            runValidationTasks("SupportFromHelpersForHouseholdChores", value);
+          }
+          setSupportFromHelpersForHouseholdChores(value);
+        }}
+        onBlur={() =>
+          runValidationTasks(
+            "SupportFromHelpersForHouseholdChores",
+            SupportFromHelpersForHouseholdChores
+          )
+        }
+        errorMessage={errors.SupportFromHelpersForHouseholdChores?.errorMessage}
+        hasError={errors.SupportFromHelpersForHouseholdChores?.hasError}
+        {...getOverrideProps(overrides, "SupportFromHelpersForHouseholdChores")}
+      >
+        <option
+          children="Not applicable"
+          value="Not_Applicable"
+          {...getOverrideProps(
+            overrides,
+            "SupportFromHelpersForHouseholdChoresoption0"
+          )}
+        ></option>
+        <option
+          children="Weak"
+          value="Weak"
+          {...getOverrideProps(
+            overrides,
+            "SupportFromHelpersForHouseholdChoresoption1"
+          )}
+        ></option>
+        <option
+          children="Medium"
+          value="Medium"
+          {...getOverrideProps(
+            overrides,
+            "SupportFromHelpersForHouseholdChoresoption2"
+          )}
+        ></option>
+        <option
+          children="Strong"
+          value="Strong"
+          {...getOverrideProps(
+            overrides,
+            "SupportFromHelpersForHouseholdChoresoption3"
+          )}
+        ></option>
+      </SelectField>
+      <SelectField
         label="Care giving responsibilities"
         placeholder="Please select an option"
         isDisabled={false}
@@ -2499,7 +2565,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -2515,16 +2581,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities: value,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -2573,7 +2640,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -2589,16 +2656,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving: value,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -2654,7 +2722,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -2670,16 +2738,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores: value,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -2755,7 +2824,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -2771,16 +2840,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem: value,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -2851,7 +2921,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -2867,16 +2937,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments: value,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -2898,8 +2969,8 @@ export default function QuestionCreateForm(props) {
           {...getOverrideProps(overrides, "OtherCommitmentsoption0")}
         ></option>
         <option
-          children="Many commitments"
-          value="Many_commitments"
+          children="Many commiments"
+          value="Many_commiments"
           {...getOverrideProps(overrides, "OtherCommitmentsoption1")}
         ></option>
         <option
@@ -2929,7 +3000,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -2945,16 +3016,17 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer: value,
+              interviewerJobLocation,
               Notes,
             };
             const result = onChange(modelFields);
@@ -2983,12 +3055,11 @@ export default function QuestionCreateForm(props) {
           "AvailabilityOfHoursIdentifiedByInterviewer"
         )}
       ></TextField>
-      <TextAreaField
-        label="Notes"
-        isRequired={true}
-        isReadOnly={false}
-        placeholder = "Additional Details"
-        value={Notes}
+      <SelectField
+        label="Interviewer suggestion for job location"
+        placeholder="Please select an option"
+        isDisabled={false}
+        value={interviewerJobLocation}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -3001,7 +3072,7 @@ export default function QuestionCreateForm(props) {
               candidateLocation,
               interviewDate,
               interviewer,
-              interviewerJobLocation,
+              candidateJobLocation,
               ResponsibilitiesAndRoles,
               TypeOfRoleSuitableFor,
               typeOfContractSuggested,
@@ -3017,16 +3088,110 @@ export default function QuestionCreateForm(props) {
               AgeOfYoungestKid,
               SupportFromSpouseForKids,
               SupportFromSpouseForHouseholdChores,
-              SupportFromHelpersForKids,
-              SupportFromHelpersForHouseholdChores,
               SupportFromOtherFamilyMembersForKids,
               SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
               careGivingResponsibilities,
               extentOfCareGiving,
               SupportFromHelpersForCareGivingChores,
               WillingnessToExpandHelpSystem,
               OtherCommitments,
               AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation: value,
+              Notes,
+            };
+            const result = onChange(modelFields);
+            value = result?.interviewerJobLocation ?? value;
+          }
+          if (errors.interviewerJobLocation?.hasError) {
+            runValidationTasks("interviewerJobLocation", value);
+          }
+          setInterviewerJobLocation(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("interviewerJobLocation", interviewerJobLocation)
+        }
+        errorMessage={errors.interviewerJobLocation?.errorMessage}
+        hasError={errors.interviewerJobLocation?.hasError}
+        {...getOverrideProps(overrides, "interviewerJobLocation")}
+      >
+        <option
+          children="Part time wfh"
+          value="Part_Time_WFH"
+          {...getOverrideProps(overrides, "interviewerJobLocationoption0")}
+        ></option>
+        <option
+          children="Part time office"
+          value="Part_Time_Office"
+          {...getOverrideProps(overrides, "interviewerJobLocationoption1")}
+        ></option>
+        <option
+          children="Part time hybrid"
+          value="Part_Time_Hybrid"
+          {...getOverrideProps(overrides, "interviewerJobLocationoption2")}
+        ></option>
+        <option
+          children="Full time wfh"
+          value="Full_time_WFH"
+          {...getOverrideProps(overrides, "interviewerJobLocationoption3")}
+        ></option>
+        <option
+          children="Full time office"
+          value="Full_time_Office"
+          {...getOverrideProps(overrides, "interviewerJobLocationoption4")}
+        ></option>
+        <option
+          children="Full time hybrid"
+          value="Full_time_Hybrid"
+          {...getOverrideProps(overrides, "interviewerJobLocationoption5")}
+        ></option>
+      </SelectField>
+      <TextAreaField
+        label="Notes"
+        placeholder="Additional Notes"
+        isRequired={true}
+        isReadOnly={false}
+        value={Notes}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              candidateName,
+              candidateAge,
+              candidateId,
+              candidateEmail,
+              candidatePhone,
+              candidateLocation,
+              interviewDate,
+              interviewer,
+              candidateJobLocation,
+              ResponsibilitiesAndRoles,
+              TypeOfRoleSuitableFor,
+              typeOfContractSuggested,
+              DriveToWorkOrIntentToWork,
+              ImmediateCareerAmbitions,
+              financialDriveToWork,
+              learningReadiness,
+              JobSearchAndReadiness,
+              JobSearchSuccessForShortTermJobs,
+              lastWorked,
+              maritalStatus,
+              Single,
+              AgeOfYoungestKid,
+              SupportFromSpouseForKids,
+              SupportFromSpouseForHouseholdChores,
+              SupportFromOtherFamilyMembersForKids,
+              SupportFromOtherFamilyMembersForHouseholdChores,
+              SupportFromHelpersForKids,
+              SupportFromHelpersForHouseholdChores,
+              careGivingResponsibilities,
+              extentOfCareGiving,
+              SupportFromHelpersForCareGivingChores,
+              WillingnessToExpandHelpSystem,
+              OtherCommitments,
+              AvailabilityOfHoursIdentifiedByInterviewer,
+              interviewerJobLocation,
               Notes: value,
             };
             const result = onChange(modelFields);
