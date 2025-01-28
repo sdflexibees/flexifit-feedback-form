@@ -860,7 +860,7 @@ export default function QuestionCreateForm(props) {
         {...getOverrideProps(overrides, "interviewer")}
       ></TextField>
       <TextField
-        label="Interviewer job location"
+        label="Interviewer suggestion - job location"
         isRequired={false}
         isReadOnly={false}
         value={interviewerJobLocation}
@@ -1004,7 +1004,7 @@ export default function QuestionCreateForm(props) {
         ></option>
       </SelectField>
       <SelectField
-        label="Type of role suitable for"
+        label="Type of role suitable for - by Interviewer"
         placeholder="Please select an option"
         isDisabled={false}
         value={TypeOfRoleSuitableFor}
@@ -1214,7 +1214,7 @@ export default function QuestionCreateForm(props) {
           {...getOverrideProps(overrides, "DriveToWorkOrIntentToWorkoption0")}
         ></option>
         <option
-          children="High but not doing much about it"
+          children="High, but not doing much about it"
           value="High_but_not_doing_much_about_it"
           {...getOverrideProps(overrides, "DriveToWorkOrIntentToWorkoption1")}
         ></option>
@@ -1303,7 +1303,7 @@ export default function QuestionCreateForm(props) {
           {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption2")}
         ></option>
         <option
-          children="To not have a long gap on resume restart work after a break"
+          children="To not have a long gap on resume, restart work after a break"
           value="To_not_have_a_long_gap_on_resume_restart_work_after_a_break"
           {...getOverrideProps(overrides, "ImmediateCareerAmbitionsoption3")}
         ></option>
@@ -1450,7 +1450,7 @@ export default function QuestionCreateForm(props) {
           {...getOverrideProps(overrides, "learningReadinessoption0")}
         ></option>
         <option
-          children="Satisfied with working learning is also important"
+          children="Satisfied with working, learning is also important"
           value="Satisfied_with_working_learning_is_also_important"
           {...getOverrideProps(overrides, "learningReadinessoption1")}
         ></option>
@@ -1595,7 +1595,7 @@ export default function QuestionCreateForm(props) {
         {...getOverrideProps(overrides, "JobSearchSuccessForShortTermJobs")}
       >
         <option
-          children="Not got many or any call backs interes interviews"
+          children="Not got many or any call backs for interviews"
           value="Not_got_many_or_any_call_backs_interes_interviews"
           {...getOverrideProps(
             overrides,
@@ -1603,7 +1603,7 @@ export default function QuestionCreateForm(props) {
           )}
         ></option>
         <option
-          children="Received fair number of call backs interest interviews for jobs"
+          children="Received fair number of call backs/interest interviews for jobs"
           value="Received_fair_number_of_call_backs_interest_interviews_for_jobs"
           {...getOverrideProps(
             overrides,
